@@ -1,12 +1,15 @@
 <template>
   <div
-    class="border rounded-lg p-4 flex flex-col items-center text-center hover:shadow-lg transition"
+    class="p-4 flex flex-col items-center text-center hover:shadow-lg transition product-item"
   >
-    <img
+    <div class="product-image">
+      <img
       :src="product.image"
       :alt="product.title"
       class="w-full h-40 object-contain mb-2"
     />
+      <button class="quick-view">XEM NHANH</button>
+    </div>
     <h3 class="text-sm font-medium mb-1 line-clamp-2">{{ product.title }}</h3>
     <div class="flex items-center mb-1">
       <span v-for="star in 5" :key="star" class="text-yellow-400 text-xs"
@@ -36,7 +39,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
+import { useI18n } from "vue-i18n";
 
 const props = defineProps({
   product: Object,
@@ -45,11 +48,43 @@ const props = defineProps({
 const { locale } = useI18n();
 
 function formatPrice(value) {
-  console.log('locale', locale.value);
-  
-  const number = typeof value === 'string' ? parseFloat(value.replace(/\./g, '')) : value;
-  return number.toLocaleString('vi-VN') + '₫';
+  console.log("locale", locale.value);
+
+  const number =
+    typeof value === "string" ? parseFloat(value.replace(/\./g, "")) : value;
+  return number.toLocaleString("vi-VN") + "₫";
 }
 </script>
 
-<style></style>
+<style>
+.product-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.quick-view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #002d72; /* màu xanh */
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: bold;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.product-item:hover .quick-view {
+  transform: translateY(0);
+}
+</style>

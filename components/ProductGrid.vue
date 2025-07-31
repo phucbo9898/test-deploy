@@ -1,12 +1,15 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 py-6">
-    <h2 class="text-2xl font-bold mb-4">{{ $t('best_seller') }}</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <h3 class="section-title section-title-bold">
+      <b></b>
+      <div class="text-2xl font-bold text-center"><span>{{ $t('best_seller') }}</span></div>
+      <b></b>
+    </h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
       <ProductCard
         v-for="product in products"
         :key="product.id"
         :product="product"
-        class="border rounded-lg p-4 shadow hover:shadow-lg transition bg-white"
       />
       <!-- <div
         v-for="(item, index) in products"
@@ -107,4 +110,49 @@ const products = [
 ];
 </script>
 
-<style></style>
+<style>
+.section-title-bold span, .section-title-bold-center span {
+    border: 2px solid rgb(0 0 0 / .1);
+    padding: .3em .8em;
+}
+.section-title span {
+    text-transform: uppercase;
+}
+.section-title-bold b:first-of-type {
+    display: none;
+}
+.section-title {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+h1, h2, h3, h4, h5, h6, .heading-font, .banner h1, .banner h2 {
+    font-weight: 700;
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6, .heading-font, .off-canvas-center .nav-sidebar.nav-vertical > li > a {
+    font-family: Lato, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #555;
+    margin-bottom: .5em;
+    margin-top: 0;
+    text-rendering: optimizeSpeed;
+    width: 100%;
+}
+
+.section-title b {
+    background-color: currentColor;
+    display: block;
+    flex: 1;
+    height: 2px;
+    opacity: .1;
+}
+b, strong {
+    font-weight: inherit;
+    font-weight: bolder;
+}
+</style>
