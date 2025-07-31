@@ -42,8 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useLocalePath } from '#i18n';
-const localePath = useLocalePath();
+
 </script>
 
 <style></style>

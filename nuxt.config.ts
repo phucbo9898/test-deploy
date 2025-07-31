@@ -2,7 +2,7 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  preset: 'vercel',
+  preset: "vercel",
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["~/assets/css/tailwind.css"],
@@ -15,17 +15,18 @@ export default defineNuxtConfig({
       {
         code: "en",
         name: "English",
-        file: "en.json"
+        file: "en.json",
       },
       {
         code: "vi",
         name: "Tiếng Việt",
-        file: "vi.json"
+        file: "vi.json",
       },
     ],
     defaultLocale: "vi",
     lazy: true,
-    strategy: "prefix_except_default"
+    strategy: "prefix_except_default",
+    vueI18nRouting: true,
     // langDir: "locales/",
   },
 });

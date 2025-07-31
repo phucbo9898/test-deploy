@@ -9,7 +9,7 @@
             ☰
           </button>
           <div class="text-xl font-bold text-blue-600">
-            <NuxtLink to="/" class="logo-link">
+            <NuxtLink :to="localePath('/')" class="logo-link">
               <img src="/image/logo.png" alt="Logo" class="h-20" />
             </NuxtLink>
           </div>
@@ -210,6 +210,9 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { ChevronRight } from "lucide-vue-next";
+import { useLocalePath } from '#i18n';
+
+const localePath = useLocalePath();
 
 const { data: menuData, error } = await useAsyncData("menu", () =>
   $fetch("/api/menu")
