@@ -40,22 +40,75 @@
       </NuxtLink>
     </div>
 
-    <ProductGrid />
+    <ProductGrid :text="$t('best_seller')" :products="bestSellers" />
+    <ProductGrid :text="$t('new_product')" :products="newProducts" />
+    <ProductGrid :text="$t('featured_product')" :products="featuredProducts" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
-const products = [
-  { image: '/image/diadermine.png', title: 'Chống Lão Hóa Da Diadermine', price: '120.000' },
-  { image: '/image/achra.png', title: 'Kem Đánh Răng Y tế Ajona', price: '80.000' },
-  { image: '/image/medivital.png', title: 'Tinh Dầu Khuynh Diệp Medivital', price: '135.000' },
-  { image: '/image/merz.png', title: 'Thuốc Tóc Merz Spezial Haar Activ', price: '640.000' },
-  { image: '/image/ensure.png', title: 'Sữa Bột Ensure Vani', price: '410.000' },
-  { image: '/image/signal.png', title: 'Kem Đánh Răng Signal Kids', price: '75.000' },
-  { image: '/image/zirkulin.png', title: 'Giải Độc Gan Zirkulin Leber Vital', price: '210.000' },
-  { image: '/image/movivit.png', title: 'Viên Sủi Multivitamin C Movivit', price: '230.000' },
-  { image: '/image/venen.png', title: 'Kem Bôi Tĩnh Mạch Abtei Venen Aktiv', price: '230.000' }
+const bestSellers = [
+  {
+    id: 5,
+    image: "/image/products/Kem-danh-rang-y-te-Ajona-25ml-247x329.jpg",
+    title: "Sữa Bột Ensure Vani",
+    price: "410000",
+  },
+  {
+    id: 6,
+    image: "/image/products/Kem-danh-rang-y-te-Ajona-25ml-247x329.jpg",
+    title: "Kem Đánh Răng Signal Kids",
+    price: "75000",
+  },
+  {
+    id: 7,
+    image: "/image/products/Kem-danh-rang-y-te-Ajona-25ml-247x329.jpg",
+    title: "Giải Độc Gan Zirkulin Leber Vital",
+    price: "210000",
+  },
+  {
+    id: 8,
+    image: "/image/products/Kem-danh-rang-y-te-Ajona-25ml-247x329.jpg",
+    title: "Viên Sủi Multivitamin C Movivit",
+    price: "230000",
+  },
+  {
+    id: 9,
+    image: "/image/products/Kem-danh-rang-y-te-Ajona-25ml-247x329.jpg",
+    title: "Kem Bôi Tĩnh Mạch Abtei Venen Aktiv",
+    price: "230000",
+  },
+];
+
+const newProducts = [
+  {
+    id: 1,
+    image: "/image/products/Kem-boi-gian-tinh-mach-Abtei-Venen-Aktiv-Balsam-125ml-1-247x329.jpg",
+    title: "Chống Lão Hóa Da Diadermine",
+    price: "120000",
+  },
+  {
+    id: 2,
+    image: "/image/products/Kem-danh-rang-y-te-Ajona-25ml-247x329.jpg",
+    title: "Kem Đánh Răng Y tế Ajona",
+    price: "80000",
+  }
+];
+
+const featuredProducts = [
+  {
+    id: 3,
+    image: "/image/products/Kem-danh-rang-Signal-0-6-tuoi-247x329.jpg",
+    title: "Tinh Dầu Khuynh Diệp Medivital",
+    price: "135000",
+  },
+  {
+    id: 4,
+    image: "/image/products/Kem-danh-rang-y-te-Ajona-25ml-247x329.jpg",
+    title: "Thuốc Tóc Merz Spezial Haar Activ",
+    price: "640000",
+  }
 ];
 
 // const maxPrice = ref(300000);

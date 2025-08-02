@@ -70,71 +70,100 @@
             </ul>
           </transition>
         </div>
-        <nav class="hidden lg:block relative">
-          <ul class="flex space-x-8">
-            <li
-              v-for="(item, idx) in menuData"
-              :key="idx"
-              class="relative group"
-            >
+        <div class="flex justify-between items-center">
+          <a
+            href="tel:0988592486"
+            class="flex items-center text-gray-400 group"
+          >
+            <!-- Icon -->
+            <FontAwesomeIcon
+              :icon="['fas', 'phone']"
+              class="w-3 h-3 mr-1 group-hover:text-black"
+            />
+            <div class="relative inline-block">
+              <span class="text-xs group-hover:text-black">0917896658</span>
               <div
-                class="py-2 px-3 font-medium hover:text-blue-600 cursor-pointer"
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 rounded bg-black text-white text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-50"
               >
-                {{ item.title }}
+                0917896658
+                <div
+                  class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-6 border-t-black"
+                ></div>
               </div>
+            </div>
+          </a>
+
+          <div
+            class="ml-2 mr-2"
+            style="border-left: 2px solid rgb(0 0 0 / 0.1)"
+          >
+            &ensp;
+          </div>
+          <div>
+            <button class="p-2 border-solid bg-blue-800 rounded">
+              <FontAwesomeIcon
+                :icon="['fas', 'cart-shopping']"
+                class="w-1 h-1 text-white"
+              />
+              <!-- <i class="icon-shopping-basket"></i> -->
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden lg:block relative bg-white">
+      <nav
+        class="container mx-auto px-4"
+        @mouseenter="isHovering = true"
+        @mouseleave="isHovering = false"
+      >
+        <ul class="flex space-x-6">
+          <li
+            v-for="(item, idx) in menuData"
+            :key="idx"
+            class="group py-4"
+            @mouseenter="hoveredIdx = idx"
+          >
+            <span class="font-medium cursor-pointer hover:text-blue-600">
+              {{ item.name }}
+            </span>
+          </li>
+        </ul>
+        <!-- Mega menu -->
+        <transition name="fade">
+          <div
+            v-if="
+              isHovering && hoveredIdx !== null && menuData[hoveredIdx]?.child
+            "
+            class="absolute left-0 right-0 top-full z-50 bg-white border-t shadow-lg animate-fadeIn"
+          >
+            <div class="container mx-auto px-6 py-6 grid grid-cols-4 gap-6">
               <div
-                class="absolute left-0 top-full hidden group-hover:block z-50"
+                v-for="(child, cidx) in menuData[hoveredIdx].child"
+                :key="cidx"
+                class="text-sm"
               >
-                <ul
-                  v-if="item.children"
-                  class="bg-white shadow-xl border rounded-lg mt-2 flex flex-col min-w-[220px]"
-                >
+                <h3 class="font-semibold mb-2 text-gray-800">
+                  {{ child.name }}
+                </h3>
+                <ul>
                   <li
-                    v-for="(child, cidx) in item.children"
-                    :key="cidx"
-                    class="relative group/sub"
+                    v-for="(grandChild, gcidx) in child.child || []"
+                    :key="gcidx"
                   >
-                    <div
-                      class="block py-2 px-4 text-sm hover:bg-gray-100 flex justify-between items-center cursor-pointer"
+                    <NuxtLink
+                      :to="grandChild.url || '#'"
+                      class="block py-1 text-gray-600 hover:text-blue-500 transition-colors duration-150"
                     >
-                      <NuxtLink
-                        :to="child.link || '#'"
-                        class="block py-2 px-4 text-sm hover:bg-blue-50 transition-colors duration-200 flex justify-between items-center"
-                      >
-                        {{ child.title }}
-                        <ChevronRight
-                          v-if="child.children"
-                          class="w-4 h-4 text-gray-400"
-                        />
-                      </NuxtLink>
-                    </div>
-                    <div
-                      class="absolute left-full top-0 hidden group/sub-hover:block z-50"
-                    >
-                      <ul
-                        v-if="child.children"
-                        class="bg-white shadow-xl border rounded-lg flex flex-col min-w-[220px]"
-                      >
-                        <li
-                          v-for="(grandChild, gcidx) in child.children"
-                          :key="gcidx"
-                        >
-                          <NuxtLink
-                            :to="grandChild.link"
-                            class="block py-4 px-2 text-sm hover:bg-gray-100"
-                          >
-                            {{ grandChild.title }}
-                          </NuxtLink>
-                        </li>
-                      </ul>
-                    </div>
+                      {{ grandChild.name }}
+                    </NuxtLink>
                   </li>
                 </ul>
               </div>
-            </li>
-          </ul>
-        </nav>
-      </div>
+            </div>
+          </div>
+        </transition>
+      </nav>
     </div>
     <transition name="fade-slide">
       <div
@@ -147,57 +176,52 @@
           </div>
           <button @click="isMobileMenuOpen = false" class="text-2xl">✕</button>
         </div>
-        <div class="p-4 flex relative">
-          <input
-            type="text"
-            v-model="searchQuery"
-            @keyup.enter="performSearch"
-            @input="fetchSuggestions"
-            placeholder="Quý khách tìm gì..."
-            class="w-full border rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <div
-            class="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400"
-          >
-            🔍
-          </div>
-          <transition name="fade-slide">
-            <ul
-              v-if="suggestions.length"
-              class="absolute top-full left-0 right-0 bg-white shadow-lg border rounded-b-lg z-50"
-            >
-              <li
-                v-for="(suggestion, idx) in suggestions"
-                :key="idx"
-                @click="selectSuggestion(suggestion)"
-                class="py-2 px-4 hover:bg-gray-100 cursor-pointer"
-              >
-                {{ suggestion }}
-              </li>
-            </ul>
-          </transition>
-        </div>
-        <ul class="flex flex-col p-4">
+        <ul class="max-h-[80vh] overflow-y-auto">
           <li v-for="(item, idx) in menuData" :key="idx" class="border-b">
             <div
               @click="toggleAccordion(idx)"
               class="flex justify-between items-center py-3 px-4 font-medium hover:bg-gray-100 cursor-pointer"
             >
-              {{ item.title }}
-              <span v-if="item.children">{{
+              {{ item.name }}
+              <span v-if="item.child">{{
                 openAccordion === idx ? "▲" : "▼"
               }}</span>
             </div>
             <transition name="fade-slide">
               <div v-if="openAccordion === idx" class="pl-4">
-                <NuxtLink
-                  v-for="(child, cidx) in item.children"
+                <div
+                  v-for="(child, cidx) in item.child"
                   :key="cidx"
-                  :to="child.link || '#'"
-                  class="block py-4 px-2 text-sm hover:bg-gray-50"
+                  class="border-b"
                 >
-                  {{ child.title }}
-                </NuxtLink>
+                  <div
+                    v-if="child.child"
+                    @click="toggleSubAccordion(cidx)"
+                    class="flex justify-between items-center py-3 px-2 text-sm hover:bg-gray-100 cursor-pointer"
+                  >
+                    {{ child.name }}
+                    <span>{{ openSubAccordion === cidx ? "▲" : "▼" }}</span>
+                  </div>
+                  <NuxtLink
+                    v-else
+                    :to="child.url || '#'"
+                    class="block py-3 px-2 text-sm hover:bg-gray-50"
+                  >
+                    {{ child.name }}
+                  </NuxtLink>
+                  <transition name="fade-slide">
+                    <div v-if="openSubAccordion === cidx" class="pl-4">
+                      <NuxtLink
+                        v-for="(grandChild, gcidx) in child.child"
+                        :key="gcidx"
+                        :to="grandChild.url || '#'"
+                        class="block py-3 px-2 text-sm hover:bg-gray-50"
+                      >
+                        {{ grandChild.name }}
+                      </NuxtLink>
+                    </div>
+                  </transition>
+                </div>
               </div>
             </transition>
           </li>
@@ -207,25 +231,34 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { ChevronRight } from "lucide-vue-next";
-import { useLocalePath } from '#i18n';
+import { useLocalePath } from "#i18n";
 
 const localePath = useLocalePath();
 
 const { data: menuData, error } = await useAsyncData("menu", () =>
   $fetch("/api/menu")
 );
+
 const isMobileMenuOpen = ref(false);
-const openAccordion = ref(null);
+const openAccordion = ref<number | null>(null);
+const openSubAccordion = ref<number | null>(null);
 const searchQuery = ref("");
 const suggestions = ref([]);
 const isLoading = ref(false);
 const isScrolled = ref(false);
+const hoveredIdx = ref(null);
+const isHovering = ref(false);
 
-function toggleAccordion(idx) {
+function toggleAccordion(idx: number) {
   openAccordion.value = openAccordion.value === idx ? null : idx;
+  openSubAccordion.value = null; // reset cấp 2 khi đổi cấp 1
+}
+
+function toggleSubAccordion(cidx: number) {
+  openSubAccordion.value = openSubAccordion.value === cidx ? null : cidx;
 }
 
 function performSearch() {
@@ -252,12 +285,12 @@ function fetchSuggestions() {
   }, 500); // Simulate API delay
 }
 
-function selectSuggestion(suggestion) {
+function selectSuggestion(suggestion: string) {
   searchQuery.value = suggestion;
   performSearch();
 }
 
-function handleOutsideClick(event) {
+function handleOutsideClick(event: any) {
   if (!event.target.closest("input") && !event.target.closest("ul")) {
     suggestions.value = [];
   }
@@ -317,5 +350,28 @@ if (error.value) {
   width: 100%;
   height: 2px;
   background-color: #2563eb;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

@@ -5,13 +5,6 @@
     >
       <div class="text-xs">{{ $t("title_header") }}</div>
       <div class="hidden lg:flex space-x-4">
-        <a href="tel:0988592486" class="flex items-center">
-          <FontAwesomeIcon
-            :icon="['fas', 'phone']"
-            class="w-3 h-3 text-black-400"
-          />
-          <span class="text-xs">0988592486</span>
-        </a>
         <a href="#" aria-label="Facebook" class="hover:text-gray-300">
           <svg
             xmlns="http://www.w3.org/2000/svg"
