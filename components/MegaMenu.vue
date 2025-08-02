@@ -70,7 +70,7 @@
             </ul>
           </transition>
         </div>
-        <div class="flex justify-between items-center">
+        <div class="hidden lg:flex justify-between items-center">
           <a
             href="tel:0988592486"
             class="flex items-center text-gray-400 group"
