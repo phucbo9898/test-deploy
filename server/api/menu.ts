@@ -1,40 +1,422 @@
 export default defineEventHandler(() => {
   return [
     {
-      title: "Docs",
-      children: [
-        { title: "Getting Started", link: "/docs/getting-started" },
+      name: "Trang Điểm",
+      url: "https://kenhxachtayduc.com/product-category/trang-diem/",
+      child: [
         {
-          title: "Guide",
-          children: [
-            { title: "Introduction", link: "/docs/guide/introduction" },
-            { title: "Advanced Topics", link: "/docs/guide/advanced" },
-          ],
-        },
-        { title: "Examples", link: "/docs/examples" },
-      ],
-    },
-    {
-      title: "Ecosystem",
-      children: [
-        {
-          title: "Modules",
-          children: [
-            { title: "Official Modules", link: "/ecosystem/modules/official" },
+          name: "Mắt/eyes",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes",
+          child: [
             {
-              title: "Community Modules",
-              link: "/ecosystem/modules/community",
+              name: "Phấn mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
             },
           ],
         },
-        { title: "Themes", link: "/ecosystem/themes" },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+          ],
+        },
       ],
     },
     {
-      title: "Community",
-      children: [
-        { title: "Events", link: "/community/events" },
-        { title: "Partners", link: "/community/partners" },
+      name: "Chăm Sóc & Nước Hoa",
+      url: "https://kenhxachtayduc.com/product-category/cham-soc-nuoc-hoa/",
+      child: [
+        {
+          name: "Mắt/eyes",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes",
+          
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          
+        },
+      ],
+    },
+    {
+      name: "Tóc",
+      url: "https://kenhxachtayduc.com/product-category/toc/",
+      child: [
+        {
+          name: "Mắt/eyes",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes",
+          child: [
+            {
+              name: "Phấn mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Thực Phẩm Chức Năng",
+      url: "https://kenhxachtayduc.com/product-category/thuc-pham-chuc-nang/",
+      child: [
+        {
+          name: "Mắt/eyes",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes",
+          child: [
+            {
+              name: "Phấn mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Răng Miệng",
+      url: "https://kenhxachtayduc.com/product-category/rang-mieng/",
+      child: [
+        {
+          name: "Mắt/eyes",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes",
+          child: [
+            {
+              name: "Phấn mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Thực Phẩm",
+      url: "https://kenhxachtayduc.com/product-category/thuc-pham/",
+      child: [
+        {
+          name: "Mắt/eyes",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes",
+          child: [
+            {
+              name: "Phấn mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Baby",
+      url: "https://kenhxachtayduc.com/product-category/baby/",
+    },
+    {
+      name: "Hộ Gia Đình",
+      url: "https://kenhxachtayduc.com/product-category/ho-gia-dinh/",
+      child: [
+        {
+          name: "Mắt/eyes",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes",
+          child: [
+            {
+              name: "Phấn mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
+        {
+          name: "Mặt/Face",
+          url: "https://kenhxachtayduc.com/product-category/trang-diem/mat",
+          child: [
+            {
+              name: "Kem nền",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/kem-nen",
+            },
+            {
+              name: "Phấn phủ",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/phan-phu",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+            {
+              name: "Bút kẻ mắt",
+              url: "https://kenhxachtayduc.com/product-category/trang-diem/mat-eyes/but-ke-mat",
+            },
+          ],
+        },
       ],
     },
   ];
