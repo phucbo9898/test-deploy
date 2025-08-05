@@ -43,6 +43,7 @@
     <ProductGrid :text="$t('best_seller')" :products="bestSellers" />
     <ProductGrid :text="$t('new_product')" :products="newProducts" />
     <ProductGrid :text="$t('featured_product')" :products="featuredProducts" />
+    <CategoryGrid />
   </div>
 </template>
 

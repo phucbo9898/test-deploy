@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 py-6">
     <h3 class="section-title section-title-bold">
       <b></b>
-      <div class="text-xs lg:text-2xl font-bold text-center"><span>{{ text }}</span></div>
+      <div class="text-xs lg:text-xl font-bold text-center"><span>{{ text }}</span></div>
       <b></b>
     </h3>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">

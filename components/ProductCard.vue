@@ -73,7 +73,7 @@ function formatPrice(value: number) {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #002d72; /* màu xanh */
+  background-color: #002d72;
   color: #fff;
   text-align: center;
   padding: 8px 0;

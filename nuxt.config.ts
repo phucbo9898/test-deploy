@@ -29,4 +29,10 @@ export default defineNuxtConfig({
     vueI18nRouting: true,
     // langDir: "locales/",
   },
+  runtimeConfig: {
+    public: {
+      apiUrl: process.env.NUXT_API_URL,
+      siteName: process.env.NUXT_URL,
+    },
+  },
 });

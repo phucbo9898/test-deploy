@@ -21,7 +21,7 @@
             v-model="searchQuery"
             @keyup.enter="performSearch"
             @input="fetchSuggestions"
-            placeholder="Quý khách tìm gì..."
+            :placeholder="$t('Quý khách tìm gì...')"
             class="w-full border rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <div
@@ -75,7 +75,6 @@
             href="tel:0988592486"
             class="flex items-center text-gray-400 group"
           >
-            <!-- Icon -->
             <FontAwesomeIcon
               :icon="['fas', 'phone']"
               class="w-3 h-3 mr-1 group-hover:text-black"
@@ -105,7 +104,6 @@
                 :icon="['fas', 'cart-shopping']"
                 class="w-1 h-1 text-white"
               />
-              <!-- <i class="icon-shopping-basket"></i> -->
             </button>
           </div>
         </div>
@@ -124,9 +122,11 @@
             class="group py-4"
             @mouseenter="hoveredIdx = idx"
           >
-            <span class="font-medium cursor-pointer hover:text-blue-600">
-              {{ item.name }}
-            </span>
+            <NuxtLink :to="siteName + item.url">
+              <span class="font-medium cursor-pointer hover:text-blue-600">
+                {{ item.name }}
+              </span>
+            </NuxtLink>
           </li>
         </ul>
         <!-- Mega menu -->
@@ -143,16 +143,18 @@
                 :key="cidx"
                 class="text-sm"
               >
-                <h3 class="font-semibold mb-2 text-gray-800">
-                  {{ child.name }}
-                </h3>
+                <NuxtLink :to="siteName + child.url">
+                  <h3 class="font-semibold mb-2 text-gray-800">
+                    {{ child.name }}
+                  </h3>
+                </NuxtLink>
                 <ul>
                   <li
                     v-for="(grandChild, gcidx) in child.child || []"
                     :key="gcidx"
                   >
                     <NuxtLink
-                      :to="grandChild.url || '#'"
+                      :to="siteName + grandChild.url || '#'"
                       class="block py-1 text-gray-600 hover:text-blue-500 transition-colors duration-150"
                     >
                       {{ grandChild.name }}
@@ -237,6 +239,10 @@ import { ChevronRight } from "lucide-vue-next";
 import { useLocalePath } from "#i18n";
 
 const localePath = useLocalePath();
+const config = useRuntimeConfig()
+
+const siteName = config.public.siteName
+const apiUrl = config.public.apiUrl
 
 const { data: menuData, error } = await useAsyncData("menu", () =>
   $fetch("/api/menu")
@@ -254,7 +260,7 @@ const isHovering = ref(false);
 
 function toggleAccordion(idx: number) {
   openAccordion.value = openAccordion.value === idx ? null : idx;
-  openSubAccordion.value = null; // reset cấp 2 khi đổi cấp 1
+  openSubAccordion.value = null;
 }
 
 function toggleSubAccordion(cidx: number) {
@@ -282,7 +288,7 @@ function fetchSuggestions() {
       searchQuery.value + " Result 3",
     ];
     isLoading.value = false;
-  }, 500); // Simulate API delay
+  }, 500);
 }
 
 function selectSuggestion(suggestion: string) {
