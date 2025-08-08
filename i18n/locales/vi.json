@@ -1,9 +1,13 @@
 {
-    "title_header": "Hàng Xách Tay Chính Hãng - Cam Kết Chất Lượng Sản Phẩm",
+    "address_shop": "500 Đường Terry Francine, San Francisco, CA 94158",
+    "time_open_shop": "Mở cửa hàng ngày từ 8 giờ sáng đến 10 giờ tối.",
     "best_seller": "BÁN CHẠY NHẤT",
     "new_product": "SẢN PHẨM MỚI",
     "featured_product": "Sản phẩm nổi bật",
     "products": "Sản Phẩm",
     "category": "Danh mục sản phẩm",
-    "Quý khách tìm gì...": "Quý khách tìm gì..."
+    "Quý khách tìm gì...": "Quý khách tìm gì...",
+    "Menu": "Danh mục",
+    "About us": "Giới thiệu",
+    "Contact": "Liên hệ"
 }

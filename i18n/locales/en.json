@@ -1,9 +1,13 @@
 {
-    "title_header": "Authentic Hand-Carried Goods – Guaranteed Product Quality",
+    "address_shop": "500 Terry Francine Street San Francisco, CA 94158",
+    "time_open_shop": "Daily 8AM-10PM",
     "best_seller": "BEST SELLER",
     "new_product": "NEW PRODUCT",
     "featured_product" : "FEATURED PRODUCT",
     "products": "Products",
     "category": "Category",
-    "Quý khách tìm gì...": "What are you searching for?"
+    "Quý khách tìm gì...": "What are you searching for?",
+    "Menu": "Menu",
+    "About us": "About",
+    "Contact": "Contact"
 }

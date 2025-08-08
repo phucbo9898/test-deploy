@@ -1,5 +1,5 @@
 <template>
-  <header class="container mx-auto max-w-6xl px-4 bg-white py-3">
+  <header class="">
     <MegaMenu />
   </header>
 </template>

@@ -5,7 +5,11 @@ export default defineNuxtConfig({
   preset: "vercel",
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  css: ["~/assets/css/tailwind.css"],
+  css: [
+    "~/assets/css/tailwind.css",
+    "~/assets/css/fonts.css",
+    "~/assets/css/css.css"
+  ],
   modules: ["@nuxt/image", "@nuxt/scripts", "@nuxt/ui", "@nuxtjs/i18n"],
   vite: {
     plugins: [tailwindcss()],

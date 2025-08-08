@@ -7,7 +7,7 @@
       </div>
       <b></b>
     </h3>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
       <div v-for="category in categories" :key="category.id">
         <div class="p-4 flex flex-col transition product-item">
           <NuxtLink :to="category.url || '#'">
