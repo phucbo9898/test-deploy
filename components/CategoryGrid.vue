@@ -70,7 +70,7 @@
           :to="category.url || '#'"
           class="p-4 flex flex-col transition product-item"
         >
-          <div class="product-image">
+          <div class="product-image-mb">
             <img
               :src="category.image"
               :alt="category.name"
@@ -155,6 +155,14 @@ const props = defineProps({
 }
 
 .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.product-image-mb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
