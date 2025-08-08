@@ -1,9 +1,10 @@
 <template>
   <div>
+    <SplashScreen />
     <Topbar />
     <Header />
     <NuxtPage />
-    <FloatingCallButton />
+    <Footer />
   </div>
 </template>
 

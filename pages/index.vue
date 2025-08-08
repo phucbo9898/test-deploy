@@ -17,7 +17,7 @@
       />
     </section>
     <section class="">
-      <CategoryGrid text="#DOUBLE TAP" />
+      <CategoryGrid />
     </section>
   </div>
 </template>
@@ -88,8 +88,12 @@ const updateBackgroundPosition = () => {
   bgX.value = -scrollY * 0.3;
   bgY.value = 0;
 };
-
 onMounted(() => {
+  setTimeout(() => {
+    if (stripeSection.value) {
+      stripeSection.value.style.backgroundPosition = `${bgX.value}px ${bgY.value}px`;
+    }
+  }, 100);
   window.addEventListener("scroll", updateBackgroundPosition);
 });
 

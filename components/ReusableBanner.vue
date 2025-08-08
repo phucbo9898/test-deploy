@@ -24,7 +24,7 @@
         <br /><br /><br />
         <div class="text-center">
           <button
-            class="border-[2px] border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+            class="border-[2px] bg-white border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
           >
             {{ button_text_banner }}
           </button>

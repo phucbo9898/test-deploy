@@ -1,71 +1,21 @@
 <template>
   <div class="relative mt-10">
     <!-- Swiper -->
-    <div class="hidden md:block">
-      <swiper
-        :modules="[Navigation]"
-        :slides-per-view="2"
-        :space-between="16"
-        :navigation="{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }"
-        :breakpoints="{
-          640: { slidesPerView: 3, spaceBetween: 20 },
-          768: { slidesPerView: 4, spaceBetween: 20 },
-          1024: { slidesPerView: 6, spaceBetween: 24 },
-        }"
-      >
-        <swiper-slide v-for="category in categories" :key="category.id">
-          <NuxtLink
-            :to="category.url || '#'"
-            class="p-4 flex flex-col transition product-item"
-          >
-            <div class="product-image">
-              <img
-                :src="category.image"
-                :alt="category.name"
-                class="w-full h-40 object-contain mb-2"
-              />
-              <div class="overlay">
-                <span
-                  class="text-sm font-medium mb-1 text-center line-clamp-2 uppercase"
-                >
-                  {{ category.name }}
-                </span>
-                <span class="text-center uppercase text-xs">
-                  {{ category.total_product || 10 }} sản phẩm
-                </span>
-              </div>
-              <div class="block md:hidden">
-                <span
-                  class="text-sm font-medium mb-1 text-center line-clamp-2 uppercase"
-                >
-                  {{ category.name }}
-                </span>
-                <span class="text-xs mb-1 text-center line-clamp-2 uppercase">
-                  {{ category.total_product || 10 }} sản phẩm
-                </span>
-              </div>
-            </div>
-          </NuxtLink>
-        </swiper-slide>
-      </swiper>
-
-      <!-- Navigation Buttons -->
-      <div
-        class="swiper-button-prev absolute top-1/2 -left-6 z-10 bg-white rounded-full shadow p-2 cursor-pointer"
-      >
-        <FontAwesomeIcon :icon="['fas', 'arrow-left']" />
-      </div>
-      <div
-        class="swiper-button-next absolute top-1/2 -right-6 z-10 bg-white rounded-full shadow p-2 cursor-pointer"
-      >
-        <FontAwesomeIcon :icon="['fas', 'arrow-right']" />
-      </div>
-    </div>
-    <div class="flex flex-col md:hidden">
-      <div v-for="category in categories" :key="category.id">
+    <swiper
+      :modules="[Navigation]"
+      :slides-per-view="2"
+      :space-between="16"
+      :navigation="{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }"
+      :breakpoints="{
+        640: { slidesPerView: 3, spaceBetween: 20 },
+        768: { slidesPerView: 4, spaceBetween: 20 },
+        1024: { slidesPerView: 6, spaceBetween: 24 },
+      }"
+    >
+      <swiper-slide v-for="category in categories" :key="category.id">
         <NuxtLink
           :to="category.url || '#'"
           class="p-4 flex flex-col transition product-item"
@@ -98,7 +48,19 @@
             </div>
           </div>
         </NuxtLink>
-      </div>
+      </swiper-slide>
+    </swiper>
+
+    <!-- Navigation Buttons -->
+    <div
+      class="swiper-button-prev absolute top-1/2 -left-6 z-10 bg-white rounded-full shadow p-2 cursor-pointer"
+    >
+      <FontAwesomeIcon :icon="['fas', 'arrow-left']" />
+    </div>
+    <div
+      class="swiper-button-next absolute top-1/2 -right-6 z-10 bg-white rounded-full shadow p-2 cursor-pointer"
+    >
+      <FontAwesomeIcon :icon="['fas', 'arrow-right']" />
     </div>
   </div>
 </template>

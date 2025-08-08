@@ -8,7 +8,8 @@ export default defineNuxtConfig({
   css: [
     "~/assets/css/tailwind.css",
     "~/assets/css/fonts.css",
-    "~/assets/css/css.css"
+    "~/assets/css/css.css",
+    "~/assets/css/swiper.css",
   ],
   modules: ["@nuxt/image", "@nuxt/scripts", "@nuxt/ui", "@nuxtjs/i18n"],
   vite: {
