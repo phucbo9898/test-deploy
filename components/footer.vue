@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="w-full md:w-1/2">
         <span class="text-lg font-bold mb-4 uppercase text-white"
           >Mailing List</span
         >
