@@ -1,56 +1,56 @@
 <template>
-  <div>
-    <div v-if="showSplash" class="splash-screen">
-      <div
-        class="w-full h-full inset-0 bg-white flex items-center justify-center z-50"
-      >
-        <div class="flex flex-col items-center">
-          <!-- Logo zoom nhẹ -->
-          <img src="/image/logo.png" alt="Logo" class="logo animate-pulse-scale mb-4" />
-
-          <!-- Spinner xoay -->
-          <div
-            class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"
-          ></div>
-        </div>
+  <Transition name="fade" @after-leave="onAfterLeave" appear>
+    <div
+      v-if="visible"
+      class="splash-screen fixed inset-0 bg-white flex items-center justify-center z-50"
+      :class="{ 'opacity-0': !showSplash, 'opacity-100': showSplash }"
+    >
+      <div class="flex flex-col items-center">
+        <img
+          src="/image/logo.png"
+          alt="Logo"
+          class="logo animate-pulse-scale mb-4"
+        />
+        <div
+          class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"
+        ></div>
       </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
-<script lang="ts" setup>
-import { ref, onMounted } from "vue";
-const showSplash = ref(true);
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+const showSplash = useSplashState();
 
-onMounted(() => {
-  setTimeout(() => {    
-    showSplash.value = false;
-  }, 5000);
+const visible = ref(true);
+
+function onAfterLeave() {
+  visible.value = false;
+}
+
+onMounted(async () => {
+  await new Promise((r) => setTimeout(r, 3000));
+  showSplash.value = false;
 });
 </script>
 
 <style scoped>
-/* Fade in - fade out transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.6s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
 .splash-screen {
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: white;
+  transition: opacity 0.5s ease;
+  opacity: 1;
 }
 
-/* Custom pulse scale cho logo */
+.opacity-0 {
+  opacity: 0 !important;
+}
+.opacity-100 {
+  opacity: 1 !important;
+}
+
 @keyframes pulse-scale {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -59,5 +59,15 @@ onMounted(() => {
 }
 .animate-pulse-scale {
   animation: pulse-scale 1.5s ease-in-out infinite;
+}
+
+/* Transition fade cho <Transition> */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
 }
 </style>
