@@ -1,7 +1,8 @@
 <template>
   <header class="bg-[rgb(249,219,121)] sticky top-0 z-50 transition-shadow">
-    <div class="flex items-center justify-between lg:justify-between gap-4 py-2 relative">
-      <!-- Icon menu (bên trái) -->
+    <div
+      class="flex items-center justify-between lg:justify-between gap-4 py-2 relative"
+    >
       <div class="w-1/3 flex justify-start items-center">
         <button class="lg:hidden text-2xl" @click="isMobileMenuOpen = true">
           ☰
@@ -9,15 +10,13 @@
         <div class="hidden lg:block relative">
           <nav class="mx-auto px-4">
             <ul class="flex space-x-4">
-              <li
-                  v-for="(item, idx) in menuData"
-                  :key="idx"
-                  class="group py-4"
-              >
+              <li v-for="(item, idx) in menuData" :key="idx" class="group py-4">
                 <NuxtLink :to="siteName + item.url">
-                <span class="font-medium cursor-pointer hover:text-[#79869c] uppercase">
-                  {{ item.name }}
-                </span>
+                  <span
+                    class="font-medium cursor-pointer hover:text-[#79869c] uppercase"
+                  >
+                    {{ item.name }}
+                  </span>
                 </NuxtLink>
               </li>
             </ul>
@@ -25,29 +24,31 @@
         </div>
       </div>
 
-      <!-- Logo (giữa) -->
       <div class="w-1/3 flex justify-center items-center">
         <NuxtLink :to="localePath('/')" class="logo-link">
-          <img src="/image/logo.png" alt="Logo" class="h-10 max-h-10 object-contain" />
+          <img
+            src="/image/logo.png"
+            alt="Logo"
+            class="h-10 max-h-10 object-contain"
+          />
         </NuxtLink>
       </div>
 
-      <!-- Phần trống (bên phải) để cân đối layout) -->
-      <div class="w-1/3 flex justify-end items-center">
-
-      </div>
+      <div class="w-1/3 flex justify-end items-center"></div>
     </div>
     <transition name="fade-slide">
       <div
-          v-if="isMobileMenuOpen"
-          class="fixed inset-0 bg-white z-50 overflow-hidden"
+        v-if="isMobileMenuOpen"
+        class="fixed inset-0 bg-white z-50 overflow-hidden"
       >
         <div class="flex justify-between items-center p-4">
           <button @click="isMobileMenuOpen = false" class="text-2xl">✕</button>
         </div>
         <ul class="max-h-[80vh] overflow-hidden mx-auto">
           <li v-for="(item, idx) in menuData" :key="idx" class="items-center">
-            <div class="flex justify-center items-center py-3 px-4 font-medium hover:bg-gray-100 cursor-pointer">
+            <div
+              class="flex justify-center items-center py-3 px-4 font-medium hover:bg-gray-100 cursor-pointer"
+            >
               {{ item.name }}
             </div>
           </li>
@@ -58,32 +59,31 @@
 </template>
 
 <script setup lang="ts">
-import {ref, onMounted, onBeforeUnmount} from "vue";
-import {useLocalePath} from "#i18n";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useLocalePath } from "#i18n";
 
 const localePath = useLocalePath();
-const config = useRuntimeConfig()
+const config = useRuntimeConfig();
 
-const siteName = config.public.siteName
-const apiUrl = config.public.apiUrl
+const siteName = config.public.siteName;
+const apiUrl = config.public.apiUrl;
 
 const menuData = [
   {
-    name: $t('Menu'),
-    url: localePath('/product-category/shop')
+    name: $t("Menu"),
+    url: localePath("/product-category/shop"),
   },
   {
-    name: $t('About us'),
-    url: localePath('/about')
+    name: $t("About us"),
+    url: localePath("/about"),
   },
   {
-    name: $t('Contact'),
-    url: localePath('/contact')
-  }
-]
+    name: $t("Contact"),
+    url: localePath("/contact"),
+  },
+];
 
 const isMobileMenuOpen = ref(false);
-
 
 // if (error.value) {
 //   console.error("Failed to fetch menu:", error.value);

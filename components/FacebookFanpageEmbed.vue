@@ -30,7 +30,6 @@ onMounted(() => {
   if (window.FB) {
     window.FB.XFBML.parse();
   } else {
-    // Load SDK if not loaded yet
     (function (d, s, id) {
       var js,
         fjs = d.getElementsByTagName(s)[0];

@@ -148,15 +148,14 @@ function handleCheckbox(event) {
   display: none;
 }
 
-/* Tạo style cho label đóng vai trò là checkbox */
 .custom-label {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
   user-select: none;
+  vertical-align: middle;
 }
 
-/* Ô vuông checkbox */
 .custom-label::before {
   content: "";
   width: 18px;
@@ -164,18 +163,19 @@ function handleCheckbox(event) {
   border: 2px solid #666;
   border-radius: 4px;
   margin-right: 8px;
-  transition: background 0.2s;
-}
 
-/* Khi được tích */
-.custom-checkbox:checked + .custom-label::before {
-  /* background: #4caf50; */
-  /* border-color: #4caf50; */
-  content: "✔";
-  font-size: 14px;
-  color: white;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.custom-checkbox:checked + .custom-label::before {
+  content: "✔";
+  color: white;
 }
 </style>

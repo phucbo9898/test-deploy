@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from "vue";
 const showSplash = useSplashState();
 
 const visible = ref(true);
@@ -30,8 +30,15 @@ function onAfterLeave() {
 }
 
 onMounted(async () => {
+  document.body.style.overflow = "hidden";
+  window.scrollTo(0, 0);
   await new Promise((r) => setTimeout(r, 3000));
   showSplash.value = false;
+});
+
+onBeforeUnmount(() => {
+  document.body.style.overflow = "";
+  window.scrollTo(0, 0);
 });
 </script>
 
@@ -61,7 +68,6 @@ onMounted(async () => {
   animation: pulse-scale 1.5s ease-in-out infinite;
 }
 
-/* Transition fade cho <Transition> */
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
@@ -69,5 +75,9 @@ onMounted(async () => {
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
+}
+
+body {
+  overflow: hidden;
 }
 </style>

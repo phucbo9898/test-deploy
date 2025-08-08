@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export const useAxios = () => {
   const config = useRuntimeConfig();
   const apiUrl = config.public.apiUrl;
