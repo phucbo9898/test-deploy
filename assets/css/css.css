@@ -2,15 +2,49 @@
     font-family: 'Belinda', cursive;
 }
 
-.bg-stripe {
+/* .bg-stripe {
     background-image: repeating-linear-gradient(
-            45deg,
-            #a2e8cc,
-            #a2e8cc 120px,
-            #ffffff 120px,
-            #ffffff 220px
-    );
-    background-size: 200% 200%;
+        45deg,
+        #a2e8cc,
+        #a2e8cc 20px,
+        #ffffff 20px,
+        #ffffff 30px);
+    background-size: 100% 100%;
     background-repeat: repeat;
     transition: background-position 0.2s ease-out;
+} */
+
+.bg-stripe {
+    --stripe-width: 4vw;
+    --stripe-cycle: calc(var(--stripe-width) * 2);
+    --stripe-size: calc(var(--stripe-cycle) * 1.4142);
+
+    background-image: repeating-linear-gradient(45deg,
+            #a0eec0 0,
+            #a0eec0 var(--stripe-width),
+            #ffffff var(--stripe-width),
+            #ffffff var(--stripe-cycle));
+    background-size: var(--stripe-size) var(--stripe-size);
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    transition: background-position 0.2s ease-out;
+}
+
+@media screen and (max-width: 767px) {
+    .bg-stripe {
+        --stripe-width: 5vw;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .bg-stripe {
+        --stripe-width: 6vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .bg-stripe {
+        --stripe-width: 6vw;
+    }
 }
