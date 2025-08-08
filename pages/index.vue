@@ -1,104 +1,101 @@
 <template>
   <div>
     <ReusableBanner
-        v-for="(banner, index) in banners"
-        :key="index"
-        v-bind="banner"
+      v-for="(banner, index) in banners"
+      :key="index"
+      v-bind="banner"
     />
-
-<!--    <section-->
-<!--        ref="stripeSection"-->
-<!--        class="h-[300px] md:h-[600px] overflow-hidden w-full bg-stripe"-->
-<!--        :style="{ backgroundPosition: `${bgX}px ${bgY}px` }"-->
-<!--    >-->
-<!--      <img src="/image/banner11.png" alt="banner" class="w-full h-auto">-->
-<!--    </section>-->
-
     <section
-        ref="stripeSection"
-        class="h-[300px] md:h-[800px] w-full bg-stripe relative mb-8"
-        :style="{ backgroundPosition: `${bgX}px ${bgY}px` }"
+      ref="stripeSection"
+      class="h-[200px] md:h-[400px] lg:h-[500px] xl:h-[700px] 2xl:h-[1000px] w-full bg-stripe relative mb-8"
+      :style="{ backgroundPosition: `${bgX}px ${bgY}px` }"
     >
       <img
-          src="/image/banner11.png"
-          alt="banner"
-          class="w-full h-full md:h-auto z-10"
+        src="/image/banner11.png"
+        alt="banner"
+        class="w-full h-full md:h-auto z-10 object-contain"
       />
     </section>
     <section class="">
-      <span>#DOUBLE TAP</span>
+      <CategoryGrid text="#DOUBLE TAP" />
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from "vue";
+
 const banners = [
   {
     flag: "slide",
-    image: "/image/banner1.jpg",
-    content: "text 1",
+    image: "/image/banner1.png",
+    title_banner: "Hand crafted",
+    content: "Ice cream",
     button_text_banner: "banner 1",
     bg_color: "bg-[rgb(249,219,121)]",
   },
   {
     flag: "banner-ltr",
     image: "/image/banner1.jpg",
-    title_banner: "Title banner 1",
-    sub_title_banner: "sub_title banner 1",
-    content: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
+    title_banner: "Out flavors",
+    sub_title_banner: "Fresh n' Tasty!",
+    content:
+      "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
     button_text_banner: "Menu",
   },
   {
     flag: "slide",
-    image: "/image/banner2.jpg",
-    content: "text 2",
+    image: "/image/banner2.png",
+    title_banner: "Enjoy",
+    content: "Dairy free",
     button_text_banner: "banner 2",
     bg_color: "bg-[rgb(181,232,213)]",
   },
   {
     flag: "banner-rtr",
     image: "/image/banner2.jpg",
-    title_banner: "Title banner 2",
-    sub_title_banner: "sub_title banner 2",
-    content: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
-    button_text_banner: "READ MORE",
+    title_banner: "Out Place",
+    sub_title_banner: "Ice cream by the sea",
+    content:
+      "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
+    button_text_banner: "Read more",
   },
   {
     flag: "slide",
-    image: "/image/banner3.jpg",
-    content: "text 3",
+    image: "/image/banner3.png",
+    title_banner: "Get yours",
+    content: "We deliver",
     button_text_banner: "banner 3",
     bg_color: "bg-[rgb(255,191,179)]",
   },
   {
     flag: "banner-ltr",
     image: "/image/banner3.jpg",
-    title_banner: "Title banner 3",
-    sub_title_banner: "sub_title banner 3",
-    content: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
+    title_banner: "Desserts",
+    sub_title_banner: "Ice cream goodies",
+    content:
+      "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
     button_text_banner: "order online",
   },
 ];
 
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const stripeSection = ref(null)
-const bgX = ref(0)
-const bgY = ref(0)
+const stripeSection = ref(null);
+const bgX = ref(0);
+const bgY = ref(0);
 
 const updateBackgroundPosition = () => {
-  const scrollY = window.scrollY
-  bgX.value = -scrollY * 0.3
-  bgY.value = 0
-}
+  const scrollY = window.scrollY;
+  bgX.value = -scrollY * 0.3;
+  bgY.value = 0;
+};
 
 onMounted(() => {
-  window.addEventListener('scroll', updateBackgroundPosition)
-})
+  window.addEventListener("scroll", updateBackgroundPosition);
+});
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', updateBackgroundPosition)
-})
+  window.removeEventListener("scroll", updateBackgroundPosition);
+});
 </script>
 
 <style scoped>

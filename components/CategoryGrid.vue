@@ -3,11 +3,11 @@
     <h3 class="section-title section-title-bold">
       <b></b>
       <div class="text-xs lg:text-xl font-bold text-center">
-        <span>{{ $t("category") }}</span>
+        <span>{{ text }}</span>
       </div>
       <b></b>
     </h3>
-    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+    <div class="flex gap-2 mt-10">
       <div v-for="category in categories" :key="category.id">
         <div class="p-4 flex flex-col transition product-item">
           <NuxtLink :to="category.url || '#'">
@@ -33,9 +33,7 @@
                 >
                   {{ category.name }}
                 </span>
-                <span
-                  class="text-xs mb-1 text-center line-clamp-2 uppercase"
-                >
+                <span class="text-xs mb-1 text-center line-clamp-2 uppercase">
                   {{ category.total_product || 10 }} sản phẩm
                 </span>
               </div>
@@ -48,6 +46,9 @@
 </template>
 
 <script lang="ts" setup>
+const props = defineProps<{
+  text?: string;
+}>();
 const config = useRuntimeConfig();
 const apiUrl = config.public.apiUrl;
 const { data: categories, error } = await useAsyncData("menu", () =>

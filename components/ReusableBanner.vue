@@ -1,70 +1,83 @@
 <template>
   <div>
     <section
-        v-if="flag === 'slide'"
-        class="relative h-[300px] md:h-[600px] flex items-center justify-center overflow-hidden"
-        :class="bg_color"
+      v-if="flag === 'slide'"
+      class="relative h-[300px] md:h-[600px] flex items-center justify-center overflow-hidden"
+      :class="bg_color"
     >
       <div class="absolute">
         <img
-            :src="image"
-            alt="Banner"
-            class="w-[100px] md:w-[400px] h-[200px] md:h-[500px] object-contain"
+          :src="image"
+          alt="Banner"
+          class="w-[300px] md:w-[400px] h-[200px] md:h-[500px] object-contain"
         />
       </div>
-      <div class="relative z-10">
-        <span class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl font-bold text-white text-center">{{ content }}</span>
-        <br><br><br>
+      <div class="relative z-10 text-center">
+        <span
+          class="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center uppercase"
+          >{{ title_banner }}</span
+        ><br />
+        <span
+          class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl font-bold text-white text-center uppercase"
+          >{{ content }}</span
+        >
+        <br /><br /><br />
         <div class="text-center">
-          <button class="border-[2px] border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase">
+          <button
+            class="border-[2px] border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+          >
             {{ button_text_banner }}
           </button>
         </div>
       </div>
     </section>
     <section
-        v-else-if="flag === 'banner-ltr'"
-        class="flex flex-col md:flex-row w-full h-[300px] md:h-[600px] overflow-hidden"
+      v-else-if="flag === 'banner-ltr'"
+      class="block md:flex md:flex-col md:flex-row w-full h-full md:h-[600px] overflow-hidden"
     >
       <div class="w-full md:w-1/2 h-64 md:h-full overflow-hidden">
-        <img
-            :src="image"
-            alt="Banner"
-            class="w-full h-full object-cover"
-        />
+        <img :src="image" alt="Banner" class="w-full h-full object-cover" />
       </div>
-      <div class="w-full md:w-1/2 flex flex-col items-center justify-center p-8 text-center">
+      <div
+        class="w-full md:w-1/2 flex flex-col items-center justify-center p-8 text-center"
+      >
         <h2 class="text-2xl md:text-4xl font-bold">{{ title_banner }}</h2>
-        <h3 class="text-xl md:text-3xl mb-4 font-belinda">{{ sub_title_banner }}</h3>
+        <h3 class="text-xl md:text-3xl mb-4 font-belinda">
+          {{ sub_title_banner }}
+        </h3>
         <p class="text-md md:text-lg mb-6">
           {{ content }}
         </p>
-        <button class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase">
+        <button
+          class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+        >
           {{ button_text_banner }}
         </button>
       </div>
     </section>
     <section
-        v-else-if="flag === 'banner-rtr'"
-        class="flex flex-col md:flex-row w-full h-[300px] md:h-[600px] overflow-hidden"
+      v-else-if="flag === 'banner-rtr'"
+      class="block md:flex md:flex-col md:flex-row w-full h-full md:h-[600px] overflow-hidden"
     >
       <div
-          class="w-full md:w-1/2 h-64 md:h-full overflow-hidden"
-          :class="flag === 'banner-rtr' ? 'md:order-last' : ''"
+        class="w-full md:w-1/2 h-64 md:h-full overflow-hidden"
+        :class="flag === 'banner-rtr' ? 'md:order-last' : ''"
       >
-        <img
-            :src="image"
-            alt="Banner"
-            class="w-full h-full object-cover"
-        />
+        <img :src="image" alt="Banner" class="w-full h-full object-cover" />
       </div>
-      <div class="w-full md:w-1/2 flex flex-col items-center justify-center p-8 text-center">
+      <div
+        class="w-full md:w-1/2 flex flex-col items-center justify-center p-8 text-center"
+      >
         <h2 class="text-2xl md:text-4xl font-bold">{{ title_banner }}</h2>
-        <h3 class="text-xl md:text-3xl mb-4 font-belinda">{{ sub_title_banner }}</h3>
+        <h3 class="text-xl md:text-3xl mb-4 font-belinda">
+          {{ sub_title_banner }}
+        </h3>
         <p class="text-md md:text-lg mb-6">
           {{ content }}
         </p>
-        <button class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase">
+        <button
+          class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+        >
           {{ button_text_banner }}
         </button>
       </div>
@@ -80,6 +93,6 @@ const props = defineProps({
   button_text_banner: String,
   title_banner: String,
   sub_title_banner: String,
-  bg_color: String
-})
+  bg_color: String,
+});
 </script>
