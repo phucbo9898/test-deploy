@@ -1,16 +1,14 @@
 <template>
-  <div
-    class="p-4 flex flex-col hover:shadow-lg transition product-item"
-  >
+  <div class="p-4 flex flex-col hover:shadow-lg transition product-item">
     <div class="product-image">
       <img
-      :src="product.image"
-      :alt="product.title"
-      class="w-full h-40 object-contain mb-2"
-    />
+        :src="product.image"
+        :alt="product.name"
+        class="md:w-full h-40 object-contain mb-2"
+      />
       <button class="quick-view opacity-90">XEM NHANH</button>
     </div>
-    <h3 class="text-sm font-medium mb-1 line-clamp-2">{{ product.title }}</h3>
+    <h3 class="text-sm font-medium mb-1 line-clamp-2">{{ product.name }}</h3>
     <div class="flex mb-1">
       <span v-for="star in 5" :key="star" class="text-yellow-400 text-xl"
         >★</span
@@ -42,7 +40,7 @@
 import { useI18n } from "vue-i18n";
 
 const props = defineProps({
-  product: Object
+  product: Object,
 });
 
 const { locale } = useI18n();

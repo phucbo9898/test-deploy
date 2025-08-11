@@ -17,13 +17,28 @@
       />
     </section>
     <section class="">
-      <CategoryGrid />
+      <CategoryGrid :categories="categories" />
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue";
+const { axios } = useAxios();
+const categories = ref(null);
+const loading = ref(true);
+const error = ref(null);
+
+onMounted(async () => {
+  try {
+    const response = await axios.get("/Category");
+    categories.value = response.data.data;
+  } catch (err) {
+    error.value = err;
+  } finally {
+    loading.value = false;
+  }
+});
 
 const banners = [
   {

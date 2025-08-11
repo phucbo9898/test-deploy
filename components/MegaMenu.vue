@@ -3,7 +3,7 @@
     <div
       class="flex items-center justify-between lg:justify-between gap-4 py-2 relative"
     >
-      <div class="w-1/3 flex justify-start items-center">
+      <div class="w-1/3 flex justify-start items-center px-2">
         <button class="lg:hidden text-2xl" @click="isMobileMenuOpen = true">
           ☰
         </button>
@@ -11,7 +11,7 @@
           <nav class="mx-auto px-4">
             <ul class="flex space-x-4">
               <li v-for="(item, idx) in menuData" :key="idx" class="group py-4">
-                <NuxtLink :to="siteName + item.url">
+                <NuxtLink :to="localePath('/') + item.url">
                   <span
                     class="font-medium cursor-pointer hover:text-[#79869c] uppercase"
                   >
@@ -46,11 +46,14 @@
         </div>
         <ul class="max-h-[80vh] overflow-hidden mx-auto">
           <li v-for="(item, idx) in menuData" :key="idx" class="items-center">
-            <div
-              class="flex justify-center items-center py-3 px-4 font-medium hover:bg-gray-100 cursor-pointer"
-            >
-              {{ item.name }}
-            </div>
+            <NuxtLink :to="localePath('/') + item.url">
+              <div
+                class="flex justify-center items-center py-3 px-4 font-medium hover:bg-gray-100 cursor-pointer"
+                @click="isMobileMenuOpen = false"
+              >
+                {{ item.name }}
+              </div>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -71,15 +74,15 @@ const apiUrl = config.public.apiUrl;
 const menuData = [
   {
     name: $t("Menu"),
-    url: localePath("/product-category/shop"),
+    url: "shop",
   },
   {
     name: $t("About us"),
-    url: localePath("/about"),
+    url: "about",
   },
   {
     name: $t("Contact"),
-    url: localePath("/contact"),
+    url: "home",
   },
 ];
 
