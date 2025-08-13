@@ -1,7 +1,7 @@
 <template>
   <div class="p-4 flex flex-col hover:shadow-lg transition product-item">
     <div class="product-image">
-      <NuxtLink :to="localePath('/products/') + product.slug">
+      <NuxtLink :to="localePath('/products/' + product.slug)">
         <img
           :src="product.image"
           :alt="product.name"
@@ -20,7 +20,7 @@
     <span class="text-xs text-gray-400 my-2">{{
       product.category || categoryName
     }}</span>
-    <NuxtLink :to="localePath('/products/') + product.slug">
+    <NuxtLink :to="localePath('/products/' + product.slug)">
       <h3 class="text-sm font-medium mb-1 line-clamp-2">{{ product.name }}</h3>
     </NuxtLink>
     <div class="flex mb-1">

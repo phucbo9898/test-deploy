@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div v-show="loading" class="flex flex-col items-center">
-      <div
-        class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"
-      ></div>
-    </div>
-    <div v-show="!loading" class="relative mt-10">
+    <div class="relative mt-10">
       <!-- Swiper -->
       <div class="hidden md:block">
         <swiper
@@ -24,7 +19,7 @@
         >
           <swiper-slide v-for="category in categories" :key="category.id">
             <NuxtLink
-              :to="category.url || '#'"
+              :to="localePath('/shop/' + category.slug)"
               class="p-4 flex flex-col transition product-item"
             >
               <div class="product-image">
@@ -73,7 +68,7 @@
       <div class="flex flex-col md:hidden">
         <div v-for="category in categories" :key="category.id">
           <NuxtLink
-            :to="category.url || '#'"
+            :to="localePath('/shop/' + category.slug)"
             class="p-4 flex flex-col transition product-item"
           >
             <div class="product-image-mb">
@@ -115,6 +110,9 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { useLocalePath } from "#i18n";
+
+const localePath = useLocalePath();
 // const { data: categories, error } = await useAsyncData("menu", () =>
 //   $fetch("/api/menu")
 // );

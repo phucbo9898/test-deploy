@@ -1,33 +1,26 @@
 <template>
   <div class="p-2 text-right">
     <button
-      command="show-modal"
-      commandfor="dialog"
       class="border bg-white border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+      data-bs-toggle="modal"
+      data-bs-target="#modal-filter"
     >
       Lọc sản phẩm
     </button>
-    <el-dialog>
-      <dialog
-        id="dialog"
-        aria-labelledby="dialog-title"
-        class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent"
-      >
-        <el-dialog-backdrop
-          class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
-        ></el-dialog-backdrop>
-
-        <div
-          tabindex="0"
-          class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0"
-        >
-          <el-dialog-panel
-            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95"
-            style="width: 100%; max-width: 500px; margin: auto"
-          >
+    <!-- <DetailProduct :product="product" /> -->
+    <div
+      class="modal fade"
+      id="modal-filter"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog bg-white rounded-xl">
+        <div class="modal-content rounded-lg overflow-hidden">
+          <div class="modal-body p-4">
             <div class="bg-white px-1 pt-5 pb-4 sm:p-2 sm:pb-4">
               <div class="">
-                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <div class="text-center sm:text-left">
                   <h3
                     id="dialog-title"
                     class="text-xl font-semibold text-gray-900 uppercase text-center"
@@ -95,45 +88,68 @@
                 </div>
               </div>
             </div>
-            <div
-              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              command="close"
+              commandfor="dialog"
+              @click="applyFilter"
+              data-bs-dismiss="modal"
+              class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-300 sm:ml-3 sm:w-auto"
             >
-              <button
-                type="button"
-                command="close"
-                commandfor="dialog"
-                @click="applyFilter"
-                class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-300 sm:ml-3 sm:w-auto"
-              >
-                Tìm kiếm
-              </button>
-              <button
-                type="button"
-                command="close"
-                commandfor="dialog"
-                class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring sm:ml-3 inset-ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-              >
-                Hủy bỏ
-              </button>
-              <button
-                type="button"
-                command="close"
-                commandfor="dialog"
-                @click="ResetFilter"
-                class="mt-3 inline-flex w-full justify-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-xs inset-ring sm:ml-3 inset-ring-gray-300 hover:bg-gray-400 sm:mt-0 sm:w-auto"
-              >
-                Reset
-              </button>
-            </div>
+              Tìm kiếm
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring sm:ml-3 inset-ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+            >
+              Hủy bỏ
+            </button>
+            <button
+              type="button"
+              command="close"
+              commandfor="dialog"
+              @click="ResetFilter"
+              data-bs-dismiss="modal"
+              class="mt-3 inline-flex w-full justify-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-xs inset-ring sm:ml-3 inset-ring-gray-300 hover:bg-gray-400 sm:mt-0 sm:w-auto"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <el-dialog>
+      <dialog
+        id="dialog"
+        aria-labelledby="dialog-title"
+        class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent"
+      >
+        <el-dialog-backdrop
+          class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
+        ></el-dialog-backdrop>
+
+        <div
+          tabindex="0"
+          class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0"
+        >
+          <el-dialog-panel
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95"
+            style="width: 100%; max-width: 500px; margin: auto"
+          >
+            
           </el-dialog-panel>
         </div>
       </dialog>
-    </el-dialog>
+    </el-dialog> -->
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, defineEmits } from "vue";
+// import { Dialog, DialogPanel, DialogBackdrop } from "@headlessui/vue";
 
 const emit = defineEmits(["filter"]);
 const filterName = ref("");

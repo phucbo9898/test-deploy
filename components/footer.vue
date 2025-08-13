@@ -1,87 +1,79 @@
 <template>
   <footer class="bg-black text-white py-10">
-    <div
-      class="container mx-auto mt-2 grid grid-cols-1 md:grid-cols-2 xl:justify-center gap-3 px-5 lg:px-10"
-    >
-      <div class="block grid grid-cols-1 xl:grid-cols-2 gap-5">
+    <div class="container mx-auto mt-2 xl:justify-center gap-3 px-5 lg:px-10">
+      <div class="block md:flex md:justify-center gap-5">
         <div>
           <span class="text-sm md:text-md font-bold mb-4 text-white uppercase"
-            >Address</span
+            >Địa chỉ</span
           >
           <p
             class="text-xs md:text-sm leading-relaxed text-white mt-2 break-words"
           >
-            Kênh xách tay đức là website bán lẻ online các sản phẩm chính hãng
-            nội địa Đức với giá tốt nhất.
+            500 Đường Terry Francine, San Francisco, CA 94158
           </p>
         </div>
 
-        <div
-          class="block md:flex grid md:grid-cols-2 xl:gap-20 md:justify-start gap-5"
-        >
-          <div class="">
-            <label
-              class="text-sm md:text-md font-bold mb-4 uppercase text-white"
-              >Hours</label
-            >
-            <div
-              class="text-xs md:text-sm leading-relaxed text-white mt-2 uppercase break-words"
-            >
-              open daily
-            </div>
-            <div
-              class="text-xs md:text-sm leading-relaxed text-white mt-2 uppercase break-words"
-            >
-              10am-10pm
-            </div>
+        <div class="">
+          <label class="text-sm md:text-md font-bold mb-4 uppercase text-white"
+            >Giờ mở cửa</label
+          >
+          <div
+            class="text-xs md:text-sm leading-relaxed text-white mt-2 uppercase break-words"
+          >
+            Mở cửa hàng ngày
           </div>
-          <div class="mt-5 md:mt-0">
-            <span class="text-sm md:text-md font-bold mb-4 uppercase text-white"
-              >Contacts</span
-            >
-            <p class="text-xs md:text-sm leading-relaxed mt-2 text-white">
-              info@mysite.com
-            </p>
-            <p class="text-xs md:text-sm leading-relaxed mt-2 text-white">
-              Tel: 123-456-7890
-            </p>
+          <div
+            class="text-xs md:text-sm leading-relaxed text-white mt-2 uppercase break-words"
+          >
+            10am-10pm
           </div>
         </div>
-      </div>
-      <div class="w-full md:w-1/2">
-        <span class="text-sm md:text-md font-bold mb-4 uppercase text-white"
-          >Mailing List</span
-        >
-        <div class="mt-2">
-          <label for="price" class="block text-xs md:text-sm text-white"
-            >Enter your email here*</label
+        <div class="mt-5 md:mt-0">
+          <span class="text-sm md:text-md font-bold mb-4 uppercase text-white"
+            >Liên hệ</span
+          >
+          <p class="text-xs md:text-sm leading-relaxed mt-2 text-white">
+            info@mysite.com
+          </p>
+          <p class="text-xs md:text-sm leading-relaxed mt-2 text-white">
+            Số điện thoại: 123-456-7890
+          </p>
+        </div>
+        <div>
+          <span class="text-sm md:text-md font-bold mb-4 uppercase text-white"
+            >Danh sách gửi thư</span
           >
           <div class="mt-2">
-            <div
-              class="flex items-center rounded-md bg-black pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600"
+            <label for="price" class="block text-xs md:text-sm text-white"
+              >Nhập email của bạn tại đây*</label
             >
-              <input
-                id="price"
-                type="email"
-                name="email"
-                class="block min-w-0 grow py-1.5 pr-3 pl-1 h-12 text-xs md:text-sm text-white placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-              />
+            <div class="mt-2">
+              <div
+                class="flex items-center rounded-md bg-black pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600"
+              >
+                <input
+                  id="price"
+                  type="email"
+                  name="email"
+                  class="block min-w-0 grow py-1.5 pr-3 pl-1 h-12 text-xs md:text-sm text-white placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                />
+              </div>
             </div>
-          </div>
-          <div class="mt-2">
-            <input type="checkbox" id="myCheckbox" class="custom-checkbox" />
-            <label
-              for="myCheckbox"
-              class="text-xs md:text-sm custom-label text-white"
-              >Yes, subscribe me to your newsletter. *</label
-            >
-          </div>
-          <div class="mt-2">
-            <button
-              class="border-[2px] w-full text-xs md:text-sm border-white text-white py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
-            >
-              Subscribe
-            </button>
+            <div class="mt-2">
+              <input type="checkbox" id="myCheckbox" class="custom-checkbox" />
+              <label
+                for="myCheckbox"
+                class="text-xs md:text-sm custom-label text-white"
+                >Vâng, hãy đăng ký cho tôi nhận bản tin của bạn.*</label
+              >
+            </div>
+            <div class="mt-2">
+              <button
+                class="border-[2px] w-full text-xs md:text-sm border-white text-white py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+              >
+                Đăng ký
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -90,7 +82,9 @@
       class="container mx-auto mt-5 md:mt-10 grid grid-cols-1 md:grid-cols-2 md:flex md:justify-center text-center gap-3 px-5 lg:px-50"
     >
       <div class="">
-        <p class="text-white text-xs md:text-sm">© Bản quyền thuộc về Kênh Xách Tay Đức</p>
+        <p class="text-white text-xs md:text-sm">
+          © Bản quyền thuộc về Kênh Xách Tay Đức
+        </p>
       </div>
       <div class="space-x-3 md:space-x-2 text-center text-white mb-3">
         <a href="#" aria-label="Facebook" class="">

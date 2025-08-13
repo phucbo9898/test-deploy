@@ -10,8 +10,8 @@
         >
       </div>
     </section>
+    <SidebarFilter @filter="fetchProducts" />
     <section class="px-2" v-if="products && products.length > 0">
-      <SidebarFilter @filter="fetchProducts" />
       <ProductGrid :products="products" />
       <!-- Pagination -->
       <Pagination
@@ -39,16 +39,14 @@ const loading = ref(true);
 const error = ref(null);
 const currentPage = ref(1);
 const totalPages = ref(1);
+const limit = ref(10);
 
 async function fetchProducts(params: any) {
-  console.log("params", params);
-
-  // currentPage.value = page;
   try {
     let paramSearchs: any = {};
-    paramSearchs.categorySlug = "trang-diem" || route.params.slug;
-    paramSearchs.page = params.page;
-    paramSearchs.limit = params.limit;
+    paramSearchs.categorySlug = params.categorySlug || route.params.slug;
+    paramSearchs.page = params.page || currentPage.value;
+    paramSearchs.limit = params.limit || limit.value;
     if (params.name) {
       paramSearchs.keyword = params.name;
     }
@@ -65,9 +63,14 @@ async function fetchProducts(params: any) {
     if (params.sort) {
       paramSearchs.sortBy = params.sort;
     }
-    const response = await axios.post("/Product", paramSearchs);
-    products.value = response.data.data.items;
-    totalPages.value = response.data.data.pagination.totalPage;
+    // const response = await axios.post("/Product", paramSearchs);
+    const [responseProducts, responseCategory] = await Promise.all([
+      axios.post("/Product", paramSearchs),
+      axios.get(`/Category/${route.params.slug}`),
+    ]);
+    products.value = responseProducts.data.data.items;
+    totalPages.value = responseProducts.data.data.pagination.totalPage;
+    category.value = responseCategory.data.data;
   } catch (err) {
     error.value = err;
   } finally {
@@ -77,9 +80,9 @@ async function fetchProducts(params: any) {
 
 onMounted(async () => {
   let params = {
-    categorySlug: "trang-diem" || route.params.slug,
-    page: 1,
-    limit: 10,
+    categorySlug: route.params.slug,
+    page: currentPage.value,
+    limit: limit.value,
   };
   fetchProducts(params);
 });
