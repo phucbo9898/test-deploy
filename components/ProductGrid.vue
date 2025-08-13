@@ -5,6 +5,7 @@
         v-for="product in products"
         :key="product.id"
         :product="product"
+        :categoryName="categoryName"
       />
     </div>
 
@@ -40,6 +41,10 @@
 const props = defineProps({
   text: String,
   products: Object,
+  categoryName: {
+    type: String,
+    default: "",
+  },
 });
 </script>
 

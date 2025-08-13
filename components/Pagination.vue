@@ -6,7 +6,7 @@
       :disabled="currentPage === 1"
       @click="changePage(currentPage - 1)"
     >
-      Prev
+      Trang trước
     </button>
 
     <!-- Số trang -->
@@ -26,7 +26,7 @@
       :disabled="currentPage === totalPages"
       @click="changePage(currentPage + 1)"
     >
-      Next
+      Tiếp theo
     </button>
   </div>
 </template>

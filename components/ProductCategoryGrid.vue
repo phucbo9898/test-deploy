@@ -57,7 +57,7 @@
         </swiper>
         <section class="px-2">
           <h3 class="text-lg md:text-xl uppercase">Sản phẩm nổi bật</h3>
-          <ProductGrid :products="products" />
+          <ProductGrid :products="category.products" :categoryName="category.name || ''" />
         </section>
       </div>
     </div>
@@ -84,7 +84,7 @@ const error = ref(null);
 
 onMounted(async () => {
   try {
-    const response = await axios.get("/Category");
+    const response = await axios.get("/Product/categories");
     categories.value = response.data.data;
   } catch (err) {
     error.value = err;

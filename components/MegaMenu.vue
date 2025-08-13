@@ -4,7 +4,10 @@
       class="flex items-center justify-between lg:justify-between gap-4 py-2 relative"
     >
       <div class="w-1/3 flex justify-start items-center px-2">
-        <button class="lg:hidden text-2xl" @click="isMobileMenuOpen = true">
+        <button
+          class="lg:hidden text-2xl cursor-pointer"
+          @click="isMobileMenuOpen = true"
+        >
           ☰
         </button>
         <div class="hidden lg:block relative">

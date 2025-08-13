@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "~/assets/css/fonts.css",
     "~/assets/css/css.css",
     "~/assets/css/swiper.css",
+    "~/assets/css/bootstrap.scss",
   ],
   modules: ["@nuxt/image", "@nuxt/scripts", "@nuxt/ui", "@nuxtjs/i18n"],
   vite: {

@@ -1,49 +1,77 @@
 <template>
   <div class="p-4 flex flex-col hover:shadow-lg transition product-item">
     <div class="product-image">
-      <img
-        :src="product.image"
-        :alt="product.name"
-        class="md:w-full h-40 object-contain mb-2"
-      />
-      <button class="quick-view opacity-90">XEM NHANH</button>
-    </div>
-    <h3 class="text-sm font-medium mb-1 line-clamp-2">{{ product.name }}</h3>
-    <div class="flex mb-1">
-      <span v-for="star in 5" :key="star" class="text-yellow-400 text-xl"
-        >★</span
+      <NuxtLink :to="localePath('/products/') + product.slug">
+        <img
+          :src="product.image"
+          :alt="product.name"
+          class="md:w-full h-40 object-contain mb-2"
+        />
+      </NuxtLink>
+      <!-- <button
+        class="quick-view opacity-90"
+        data-bs-toggle="modal"
+        :data-bs-target="'#exampleModal-' + product.slug"
       >
+        XEM NHANH
+      </button>
+      <DetailProduct :product="product" /> -->
+    </div>
+    <span class="text-xs text-gray-400 my-2">{{
+      product.category || categoryName
+    }}</span>
+    <NuxtLink :to="localePath('/products/') + product.slug">
+      <h3 class="text-sm font-medium mb-1 line-clamp-2">{{ product.name }}</h3>
+    </NuxtLink>
+    <div class="flex mb-1">
+      <div v-for="star in 5" :key="star">
+        <span
+          v-if="star <= fullStars(product.averangeRating)"
+          class="text-yellow-400 text-xl"
+        >
+          ★
+        </span>
+        <span
+          v-else-if="
+            star === fullStars(product.averangeRating) + 1 &&
+            hasHalfStar(product.averangeRating)
+          "
+          class="text-yellow-400 text-xl relative"
+        >
+          <span
+            style="
+              position: absolute;
+              overflow: hidden;
+              width: 50%;
+              color: gold;
+            "
+          >
+            ★
+          </span>
+          <span style="color: #ddd">★</span>
+        </span>
+        <span v-else class="text-gray-300 text-xl"> ★ </span>
+      </div>
     </div>
     <p class="font-semibold">{{ formatPrice(product.price) }}</p>
   </div>
-  <!-- <div
-    v-for="(item, index) in products"
-    :key="index"
-    class="border rounded-lg p-4 shadow hover:shadow-lg transition bg-white"
-  >
-    <img
-      :src="item.image"
-      :alt="item.title"
-      class="w-full h-40 object-contain mb-2"
-    />
-    <h3 class="text-sm font-medium mb-1 line-clamp-2">{{ item.title }}</h3>
-    <div class="flex items-center mb-1">
-      <span v-for="star in 5" :key="star" class="text-yellow-400 text-xs"
-        >★</span
-      >
-    </div>
-    <p class="text-red-500 font-semibold">{{ item.price }}₫</p> -->
-  <!-- </div> -->
 </template>
 
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
+import { useLocalePath } from "#i18n";
 
 const props = defineProps({
   product: Object,
+  categoryName: {
+    type: String,
+    default: "",
+  },
 });
 
+const localePath = useLocalePath();
 const { locale } = useI18n();
+const selectedProduct = ref(null);
 
 function formatPrice(value: number) {
   console.log("locale", locale.value);
@@ -51,6 +79,20 @@ function formatPrice(value: number) {
   const number =
     typeof value === "string" ? parseFloat(value.replace(/\./g, "")) : value;
   return number.toLocaleString("vi-VN") + "₫";
+}
+
+function setProduct(product: object) {
+  console.log("selectedProduct");
+
+  selectedProduct.value = product;
+}
+
+function hasHalfStar(rating: number) {
+  return rating % 1 >= 0.25 && rating % 1 < 0.75;
+}
+
+function fullStars(rating: number) {
+  return Math.floor(rating);
 }
 </script>
 

@@ -10,7 +10,7 @@
         >
       </div>
     </section>
-    <section class="px-2">
+    <section class="px-2" v-if="products && products.length > 0">
       <SidebarFilter @filter="fetchProducts" />
       <ProductGrid :products="products" />
       <!-- Pagination -->
@@ -20,6 +20,10 @@
         @page-change="fetchProducts"
         class="mb-4"
       />
+    </section>
+    <section v-else class="text-center mt-10">
+      <h2 class="text-xl font-bold">Không có sản phẩm nào</h2>
+      <p class="text-gray-500">Vui lòng thử lại sau.</p>
     </section>
   </div>
 </template>
