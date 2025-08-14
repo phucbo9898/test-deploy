@@ -7,7 +7,7 @@
     >
       <div class="flex flex-col items-center">
         <img
-          src="/image/logo.png"
+          src="/image/web_logo.png"
           alt="Logo"
           class="logo animate-pulse-scale mb-4"
         />

@@ -14,11 +14,11 @@
       </div>
       <div class="relative z-10 text-center">
         <span
-          class="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white text-center uppercase"
+          class="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-400 text-center uppercase"
           >{{ title_banner }}</span
         ><br />
         <span
-          class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl font-bold text-white text-center uppercase"
+          class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl font-bold text-gray-400 text-center uppercase"
           >{{ content }}</span
         >
         <br /><br /><br />

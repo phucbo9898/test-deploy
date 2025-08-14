@@ -30,9 +30,9 @@
       <div class="w-1/3 flex justify-center items-center">
         <NuxtLink :to="localePath('/')" class="logo-link">
           <img
-            src="/image/logo.png"
+            src="/image/web_logo.png"
             alt="Logo"
-            class="h-10 max-h-10 object-contain"
+            class="h-20 max-h-40 object-contain"
           />
         </NuxtLink>
       </div>

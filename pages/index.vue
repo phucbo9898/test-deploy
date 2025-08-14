@@ -7,13 +7,13 @@
     />
     <section
       ref="stripeSection"
-      class="h-[200px] md:h-[400px] lg:h-[500px] xl:h-[700px] 2xl:h-[1000px] w-full bg-stripe relative mb-8"
+      class="h-[100px] md:h-[200px] lg:h-[400px] xl:h-[300px] 2xl:h-[900px] w-full bg-stripe relative mb-8"
       :style="{ backgroundPosition: `${bgX}px ${bgY}px` }"
     >
       <img
-        src="/image/banner11.png"
+        src="/image/banner11-1.png"
         alt="banner"
-        class="w-full h-full md:h-auto z-10 object-contain"
+        class="w-full h-full md:h-[200px] lg:h-[400px] xl:h-[300px] 2xl:h-[900px] z-10 object-contain"
       />
     </section>
     <section class="">
@@ -43,7 +43,7 @@ onMounted(async () => {
 const banners = [
   {
     flag: "slide",
-    image: "/image/banner1.png",
+    image: "/image/banner/banner1.png",
     title_banner: "Hand crafted",
     content: "Ice cream",
     button_text_banner: "banner 1",
@@ -60,7 +60,7 @@ const banners = [
   },
   {
     flag: "slide",
-    image: "/image/banner2.png",
+    image: "/image/banner/banner2.png",
     title_banner: "Enjoy",
     content: "Dairy free",
     button_text_banner: "banner 2",
@@ -77,7 +77,7 @@ const banners = [
   },
   {
     flag: "slide",
-    image: "/image/banner3.png",
+    image: "/image/banner/banner3.png",
     title_banner: "Get yours",
     content: "We deliver",
     button_text_banner: "banner 3",
@@ -85,7 +85,7 @@ const banners = [
   },
   {
     flag: "banner-ltr",
-    image: "/image/banner3.jpg",
+    image: "/image/banner/banner4.png",
     title_banner: "Desserts",
     sub_title_banner: "Ice cream goodies",
     content:

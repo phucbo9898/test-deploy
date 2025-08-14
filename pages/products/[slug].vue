@@ -5,8 +5,8 @@
         class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"
       ></div>
     </div>
-    <div v-else>
-      <div class="container m-auto block md:flex md:justify-between gap-4 p-4">
+    <div v-else class="p-2 lg:p-5 lg:px-20 xl:p-10 xl:px-50">
+      <div class="container m-auto block md:flex md:justify-between gap-4">
         <!-- {{ productDetail }} -->
         <div class="relative md:w-[500px] md:h-[600px]">
           <img
@@ -137,7 +137,10 @@
           </div>
         </div>
       </div>
-      <div class="product-content p-2 md:p-5" v-html="safeContent"></div>
+      <div
+        class="container product-content mt-3 md:p-5"
+        v-html="safeContent"
+      ></div>
       <hr
         class="mt-2 border-t-2 border-gray-400 border !border-0 !border-t-2 !border-gray-400"
         style="border: none; border-top: 2px solid #9ca3af"

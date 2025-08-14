@@ -33,7 +33,7 @@
                       <input
                         type="text"
                         v-model="filterName"
-                        class="w-full h-10 text-sm border border-gray-300 rounded-md focus:border-indigo-500 focus:ring-indigo-500"
+                        class="w-full h-10 p-2 mt-1 text-sm border border-gray-300 rounded-md focus:border-indigo-500 focus:ring-indigo-500"
                         placeholder="Nhập tên sản phẩm"
                       />
                     </div>
@@ -43,7 +43,7 @@
                         <select
                           name="filter-price"
                           v-model="filterPrice"
-                          class="w-full h-10 text-sm border border-gray-300 rounded-md focus:border-indigo-500 focus:ring-indigo-500"
+                          class="w-full h-10 p-2 mt-1 text-sm border border-gray-300 rounded-md focus:border-indigo-500 focus:ring-indigo-500"
                         >
                           <option value="">Tất cả</option>
                           <option value="0-100000">Dưới 100.000đ</option>
@@ -69,7 +69,7 @@
                         <select
                           name="filter-sort"
                           v-model="filterSort"
-                          class="w-full h-10 text-sm border border-gray-300 rounded-md focus:border-indigo-500 focus:ring-indigo-500"
+                          class="w-full h-10 p-2 mt-2 text-sm border border-gray-300 rounded-md focus:border-indigo-500 focus:ring-indigo-500"
                         >
                           <option value="">Tất cả</option>
                           <option value="0">
