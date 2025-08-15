@@ -48,6 +48,7 @@ const banners = [
     content: "Ice cream",
     button_text_banner: "banner 1",
     bg_color: "bg-[rgb(249,219,121)]",
+    url: "/shop/baby"
   },
   {
     flag: "banner-ltr",
@@ -57,6 +58,7 @@ const banners = [
     content:
       "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
     button_text_banner: "Menu",
+    url: "/shop/baby"
   },
   {
     flag: "slide",
@@ -65,6 +67,7 @@ const banners = [
     content: "Dairy free",
     button_text_banner: "banner 2",
     bg_color: "bg-[rgb(181,232,213)]",
+    url: "/shop/rang-mieng"
   },
   {
     flag: "banner-rtr",
@@ -74,6 +77,7 @@ const banners = [
     content:
       "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
     button_text_banner: "Read more",
+    url: "/shop/rang-mieng"
   },
   {
     flag: "slide",
@@ -82,6 +86,7 @@ const banners = [
     content: "We deliver",
     button_text_banner: "banner 3",
     bg_color: "bg-[rgb(255,191,179)]",
+    url: "/shop/toc"
   },
   {
     flag: "banner-ltr",
@@ -91,6 +96,7 @@ const banners = [
     content:
       "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
     button_text_banner: "order online",
+    url: "/shop/toc"
   },
 ];
 

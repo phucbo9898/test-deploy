@@ -23,11 +23,17 @@
         >
         <br /><br /><br />
         <div class="text-center">
-          <button
+          <NuxtLink
+            :to="localePath(url)"
             class="border-[2px] bg-white border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
           >
             {{ button_text_banner }}
-          </button>
+          </NuxtLink>
+          <!-- <button
+            class="border-[2px] bg-white border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+          >
+            {{ button_text_banner }}
+          </button> -->
         </div>
       </div>
     </section>
@@ -48,11 +54,17 @@
         <p class="text-md md:text-lg mb-6">
           {{ content }}
         </p>
-        <button
+        <!-- <button
           class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
         >
           {{ button_text_banner }}
-        </button>
+        </button> -->
+        <NuxtLink
+          :to="localePath(url)"
+          class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+        >
+          {{ button_text_banner }}
+        </NuxtLink>
       </div>
     </section>
     <section
@@ -75,17 +87,26 @@
         <p class="text-md md:text-lg mb-6">
           {{ content }}
         </p>
-        <button
+        <!-- <button
           class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
         >
           {{ button_text_banner }}
-        </button>
+        </button> -->
+        <NuxtLink
+          :to="localePath(url)"
+          class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+        >
+          {{ button_text_banner }}
+        </NuxtLink>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
+import { useLocalePath } from "#i18n";
+
+const localePath = useLocalePath();
 const props = defineProps({
   flag: String,
   image: String,
@@ -94,5 +115,6 @@ const props = defineProps({
   title_banner: String,
   sub_title_banner: String,
   bg_color: String,
+  url: String,
 });
 </script>
