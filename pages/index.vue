@@ -17,7 +17,7 @@
       />
     </section>
     <section class="">
-      <CategoryGrid :categories="categories" />
+      <CategoryGrid :categories="categories" class="text-yellow-300" />
     </section>
   </div>
 </template>
@@ -44,58 +44,59 @@ const banners = [
   {
     flag: "slide",
     image: "/image/banner/banner1.png",
-    title_banner: "Hand crafted",
-    content: "Ice cream",
-    button_text_banner: "banner 1",
+    title_banner: "Chăm sóc bé yêu mỗi ngày",
+    content: "Baby",
+    button_text_banner: "Khám phá sản phẩm cho bé →",
     bg_color: "bg-[rgb(249,219,121)]",
+    // color_text: 'text-yellow-300',
     url: "/shop/baby"
   },
   {
     flag: "banner-ltr",
     image: "/image/banner1.jpg",
-    title_banner: "Out flavors",
-    sub_title_banner: "Fresh n' Tasty!",
-    content:
-      "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
-    button_text_banner: "Menu",
+    title_banner: "Chăm sóc bé yêu mỗi ngày",
+    sub_title_banner: "An toàn – Dịu nhẹ – Yêu thương",
+    content: "Mang đến cho bé yêu những sản phẩm an toàn, dịu nhẹ và phù hợp với làn da nhạy cảm. Từ tã bỉm, sữa tắm, đến đồ chơi an toàn – tất cả đều được chọn lọc kỹ lưỡng để giúp bé phát triển khỏe mạnh và vui vẻ.",
+    button_text_banner: "Khám phá sản phẩm cho bé →",
     url: "/shop/baby"
   },
   {
     flag: "slide",
     image: "/image/banner/banner2.png",
-    title_banner: "Enjoy",
-    content: "Dairy free",
-    button_text_banner: "banner 2",
+    title_banner: "Nụ cười khỏe – Cuộc sống tươi",
+    content: "Răng miệng",
+    button_text_banner: "Xem sản phẩm răng miệng →",
     bg_color: "bg-[rgb(181,232,213)]",
-    url: "/shop/rang-mieng"
+    url: "/shop/rang-mieng",
+    // color_text: 'text-yellow-300',
   },
   {
     flag: "banner-rtr",
     image: "/image/banner2.jpg",
-    title_banner: "Out Place",
-    sub_title_banner: "Ice cream by the sea",
+    title_banner: "Nụ cười khỏe – Cuộc sống tươi",
+    sub_title_banner: "Chăm sóc răng miệng toàn diện",
     content:
-      "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
-    button_text_banner: "Read more",
+      "Giữ gìn sức khỏe răng miệng cho cả gia đình với các sản phẩm chất lượng: bàn chải, kem đánh răng, nước súc miệng… Giúp hơi thở thơm mát, răng trắng sáng và nụ cười luôn rạng rỡ.",
+    button_text_banner: "Xem sản phẩm răng miệng →",
     url: "/shop/rang-mieng"
   },
   {
     flag: "slide",
     image: "/image/banner/banner3.png",
-    title_banner: "Get yours",
-    content: "We deliver",
-    button_text_banner: "banner 3",
+    title_banner: "Tóc đẹp, tự tin tỏa sáng",
+    content: "Tóc",
+    button_text_banner: "Khám phá sản phẩm cho tóc →",
     bg_color: "bg-[rgb(255,191,179)]",
     url: "/shop/toc"
   },
   {
     flag: "banner-ltr",
     image: "/image/banner/banner4.png",
-    title_banner: "Desserts",
-    sub_title_banner: "Ice cream goodies",
+    title_banner: "Tóc đẹp, tự tin tỏa sáng",
+    sub_title_banner: "Nuôi dưỡng từ gốc đến ngọn",
     content:
-      "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
-    button_text_banner: "order online",
+      "Bộ sưu tập chăm sóc tóc giúp bạn sở hữu mái tóc khỏe mạnh, óng mượt. Dầu gội, dầu xả, tinh dầu dưỡng – tất cả được chọn lọc để nuôi dưỡng và bảo vệ mái tóc mỗi ngày.",
+    button_text_banner: "Khám phá sản phẩm cho tóc →",
     url: "/shop/toc"
   },
 ];

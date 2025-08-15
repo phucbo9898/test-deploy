@@ -14,11 +14,13 @@
       </div>
       <div class="relative z-10 text-center">
         <span
-          class="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-400 text-center uppercase"
+          class="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center uppercase"
+          :class="color_text || 'text-gray-600'"
           >{{ title_banner }}</span
         ><br />
         <span
-          class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl font-bold text-gray-400 text-center uppercase"
+          class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl font-bold text-center uppercase"
+          :class="color_text || 'text-gray-600'"
           >{{ content }}</span
         >
         <br /><br /><br />
@@ -116,5 +118,6 @@ const props = defineProps({
   sub_title_banner: String,
   bg_color: String,
   url: String,
+  color_text: String,
 });
 </script>
