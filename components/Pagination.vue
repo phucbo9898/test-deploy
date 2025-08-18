@@ -1,8 +1,5 @@
 <template>
-  <div
-    v-if="currentPage !== 1"
-    class="flex items-center justify-center space-x-1 mt-4"
-  >
+  <div class="flex items-center justify-center space-x-1 mt-4">
     <!-- Nút Previous -->
     <button
       class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100 disabled:opacity-50"
@@ -94,7 +91,7 @@ const emit = defineEmits(["page-change"]);
 function changePage(page: Number) {
   let params: any = {};
   if (page >= 1 && page <= props.totalPages) {
-    params.name = page;
+    params.page = page;
     emit("page-change", params);
   }
 }
