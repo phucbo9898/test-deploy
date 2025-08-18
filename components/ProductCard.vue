@@ -3,7 +3,7 @@
     <div class="product-image">
       <NuxtLink :to="localePath('/products/' + product.slug)">
         <img
-          :src="product.image"
+          :src="product.image || '/image/default-image.jpg'"
           :alt="product.name"
           class="md:w-full h-40 object-contain mb-2"
         />

@@ -21,7 +21,7 @@
           <div class="product-image h-full">
             <img
               :src="
-                category.thumbnail || '/image/category/Baby-catagories.jpg'
+                category.thumbnail || '/image/default-image.jpg'
               "
               :alt="category.name"
               class="w-full h-40 object-contain mb-2"
