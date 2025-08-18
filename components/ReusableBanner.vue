@@ -9,18 +9,18 @@
         <img
           :src="image"
           alt="Banner"
-          class="w-[300px] md:w-[400px] h-[200px] md:h-[500px] object-contain"
+          class="w-[300px] md:w-[400px] h-[200px] md:h-[500px] object-contain opacity-55"
         />
       </div>
       <div class="relative z-10 text-center">
         <span
           class="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center uppercase"
-          :class="color_text || 'text-gray-600'"
+          :class="color_text || 'text-white'"
           >{{ title_banner }}</span
         ><br />
         <span
           class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl font-bold text-center uppercase"
-          :class="color_text || 'text-gray-600'"
+          :class="color_text || 'text-white'"
           >{{ content }}</span
         >
         <br /><br /><br />
