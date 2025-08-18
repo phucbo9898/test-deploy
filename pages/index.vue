@@ -16,8 +16,13 @@
         class="w-full h-full md:h-[200px] lg:h-[400px] xl:h-[300px] 2xl:h-[900px] z-10 object-contain"
       />
     </section>
-    <section class="">
-      <CategoryGrid :categories="categories" class="text-yellow-300" />
+    <div v-show="loading" class="flex flex-col items-center">
+      <div
+        class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"
+      ></div>
+    </div>
+    <section v-show="!loading">
+      <CategoryGrid :categories="categories" class="" />
     </section>
   </div>
 </template>
