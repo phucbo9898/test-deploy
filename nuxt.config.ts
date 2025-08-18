@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     // langDir: "locales/",
   },
   runtimeConfig: {
-    apiUrl: process.env.API_URL,
+    apiUrl: process.env.NUXT_API_URL,
     public: {
       siteName: process.env.NUXT_URL,
     },
