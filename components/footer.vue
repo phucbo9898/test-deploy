@@ -2,33 +2,22 @@
   <footer class="bg-black text-white py-10">
     <div class="container mx-auto mt-2 xl:justify-center gap-3 px-5 lg:px-10">
       <div class="block md:flex md:justify-center gap-5">
-        <div>
-          <span class="text-sm md:text-md font-bold mb-4 text-white uppercase"
-            >Địa chỉ</span
-          >
-          <p
-            class="text-xs md:text-sm leading-relaxed text-white mt-2 break-words"
-          >
-            500 Đường Terry Francine, San Francisco, CA 94158
-          </p>
-        </div>
-
-        <div class="">
+        <div class="md:w-1/4">
           <label class="text-sm md:text-md font-bold mb-4 uppercase text-white"
             >Giờ mở cửa</label
           >
           <div
-            class="text-xs md:text-sm leading-relaxed text-white mt-2 uppercase break-words"
+            class="text-xs md:text-sm leading-relaxed text-white mt-2 break-words"
           >
             Mở cửa hàng ngày
           </div>
           <div
             class="text-xs md:text-sm leading-relaxed text-white mt-2 uppercase break-words"
           >
-            10am-10pm
+            8am-10pm
           </div>
         </div>
-        <div class="mt-5 md:mt-0">
+        <div class="mt-5 md:mt-0 md:w-1/4">
           <span class="text-sm md:text-md font-bold mb-4 uppercase text-white"
             >Liên hệ</span
           >
@@ -39,7 +28,7 @@
             Số điện thoại: 0374575389
           </p>
         </div>
-        <div>
+        <div class="">
           <span class="text-sm md:text-md font-bold mb-4 uppercase text-white"
             >Danh sách gửi thư</span
           >

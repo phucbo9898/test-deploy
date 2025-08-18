@@ -6,7 +6,7 @@
       <div
         class="text-xs md:text-sm tracking-wider text-center mr-3 mb-3 md:mb-0"
       >
-        {{ $t("address_shop") }} &ensp;| &ensp;{{ $t("time_open_shop") }}
+        {{ $t("time_open_shop") }}
       </div>
       <div
         class="space-x-3 md:space-x-2 flex justify-center text-center items-center"
