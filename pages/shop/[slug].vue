@@ -69,10 +69,10 @@ async function fetchProducts(params: any) {
     if (params.sort) {
       paramSearchs.sortBy = params.sort;
     }
-    // const response = await axios.post("/Product", paramSearchs);
+
     const [responseProducts, responseCategory] = await Promise.all([
-      axios.post("/Product", paramSearchs),
-      axios.get(`/Category/${route.params.slug}`),
+      axios.post("/api/product/search", paramSearchs),
+      axios.get(`/api/category/${route.params.slug}`),
     ]);
     products.value = responseProducts.data.data.items;
     totalPages.value = responseProducts.data.data.pagination.totalPage;

@@ -3,11 +3,8 @@
     <swiper
       :slides-per-view="2"
       :space-between="0"
-      :breakpoints="{
-        640: { slidesPerView: 3, spaceBetween: 0 },
-        768: { slidesPerView: 4, spaceBetween: 0 },
-        1024: { slidesPerView: 6, spaceBetween: 0 },
-      }"
+      :breakpoints="breakpoints"
+      :center-insufficient-slides="true"
     >
       <swiper-slide
         v-for="category in categoryChild"
@@ -20,9 +17,7 @@
         >
           <div class="product-image h-full">
             <img
-              :src="
-                category.thumbnail || '/image/default-image.jpg'
-              "
+              :src="category.thumbnail || '/image/default-image.jpg'"
               :alt="category.name"
               class="w-full h-40 object-contain mb-2"
             />
@@ -58,10 +53,26 @@ import { Navigation } from "swiper/modules";
 const localePath = useLocalePath();
 const props = defineProps({
   categoryChild: {
-    type: Object,
-    default: {},
+    type: Array,
+    default: () => [],
   },
 });
+
+const breakpoints = {
+  640: { slidesPerView: 3 },
+  768: { slidesPerView: 4 },
+  1024: { slidesPerView: 6 },
+};
+
+const maxSlides = computed(() => {
+  const values = Object.values(breakpoints).map(bp => bp.slidesPerView || 0)
+  
+   return values.length ? Math.max(...values) : 1
+})
+
+const wrapperClass = computed(() => {
+  return props.categoryChild && props.categoryChild.length < maxSlides.value ? "custom-center" : ""
+})
 </script>
 
 <style>
@@ -121,5 +132,9 @@ const props = defineProps({
 .product-image:hover .overlay {
   opacity: 1;
   color: white !important;
+}
+
+.custom-swiper .swiper-wrapper {
+  justify-content: center;
 }
 </style>

@@ -43,7 +43,7 @@ const error = ref(null);
 
 onMounted(async () => {
   try {
-    const response = await axios.get("/Product/categories");
+    const response = await axios.get("/api/categoryProducts");
     categories.value = response.data.data;
   } catch (err) {
     error.value = err;

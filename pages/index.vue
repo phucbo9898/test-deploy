@@ -31,7 +31,7 @@ const error = ref(null);
 
 onMounted(async () => {
   try {
-    const response = await axios.get("/Category");
+    const response = await axios.get("/api/categories");
     categories.value = response.data.data;
   } catch (err) {
     error.value = err;

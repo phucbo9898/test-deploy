@@ -35,7 +35,7 @@
                     {{ category.name }}
                   </span>
                   <span class="text-center uppercase text-xs">
-                    {{ category.total_product || 10 }} sản phẩm
+                    {{ category.totalProduct || 10 }} sản phẩm
                   </span>
                 </div>
                 <div class="block md:hidden">
@@ -45,7 +45,7 @@
                     {{ category.name }}
                   </span>
                   <span class="text-xs mb-1 text-center line-clamp-2 uppercase">
-                    {{ category.total_product || 10 }} sản phẩm
+                    {{ category.totalProduct || 10 }} sản phẩm
                   </span>
                 </div>
               </div>
@@ -84,7 +84,7 @@
                   {{ category.name }}
                 </span>
                 <span class="text-center uppercase text-xs">
-                  {{ category.total_product || 10 }} sản phẩm
+                  {{ category.totalProduct || 0 }} sản phẩm
                 </span>
               </div>
               <div class="block md:hidden">
@@ -94,7 +94,7 @@
                   {{ category.name }}
                 </span>
                 <span class="text-xs mb-1 text-center line-clamp-2 uppercase">
-                  {{ category.total_product || 10 }} sản phẩm
+                  {{ category.totalProduct || 0 }} sản phẩm
                 </span>
               </div>
             </div>

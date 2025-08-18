@@ -177,7 +177,8 @@ const safeContent = ref("");
 
 onMounted(async () => {
   try {
-    const response = await axios.get(`/Product/${route.params.slug}`);
+    const response = await axios.get(`/api/productDetail/${route.params.slug}`);
+    
     productDetail.value = response.data.data;
     rawContent.value = await response.data.data.description;
 
@@ -192,36 +193,14 @@ onMounted(async () => {
       }
     });
 
-    // Sanitize tránh XSS
     safeContent.value = DOMPurify.sanitize(doc.body.innerHTML);
   } catch (err) {
     error.value = err;
-    console.log("Error fetching categories:", err);
+    console.log("Error fetching product detail:", err);
   } finally {
     loading.value = false;
   }
 });
-
-const products = [
-  {
-    id: 1,
-    name: "Sản phẩm 1",
-    image: "/image/products/Kem-danh-rang-Signal-0-6-tuoi-247x329.jpg",
-    price: "100.000₫",
-  },
-  {
-    id: 2,
-    name: "Sản phẩm 2",
-    image: "/image/products/Kem-danh-rang-Signal-0-6-tuoi-247x329.jpg",
-    price: "200.000₫",
-  },
-  {
-    id: 3,
-    name: "Sản phẩm 3",
-    image: "/image/products/Kem-danh-rang-Signal-0-6-tuoi-247x329.jpg",
-    price: "300.000₫",
-  },
-];
 
 function formatPrice(value: number) {
   console.log("locale", locale.value);

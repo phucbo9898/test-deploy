@@ -2,9 +2,8 @@ import axios from "axios";
 
 export const useAxios = () => {
   const config = useRuntimeConfig();
-  const apiUrl = config.public.apiUrl;
   const instance = axios.create({
-    baseURL: apiUrl,
+    baseURL: config.apiUrl,
     timeout: 10000,
     headers: {
       "Content-Type": "application/json",
