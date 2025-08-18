@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 text-right">
+  <div class="max-w-7xl mx-auto p-1 text-right">
     <button
       class="border bg-white border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
       data-bs-toggle="modal"

@@ -33,10 +33,10 @@
             >Liên hệ</span
           >
           <p class="text-xs md:text-sm leading-relaxed mt-2 text-white">
-            info@mysite.com
+            Sangapollo140397@gmail.com
           </p>
           <p class="text-xs md:text-sm leading-relaxed mt-2 text-white">
-            Số điện thoại: 123-456-7890
+            Số điện thoại: 0374575389
           </p>
         </div>
         <div>
@@ -86,8 +86,14 @@
           © Bản quyền thuộc về Kênh Xách Tay Đức
         </p>
       </div>
-      <div class="space-x-3 md:space-x-2 text-center text-white mb-3">
-        <a href="#" aria-label="Facebook" class="">
+      <div
+        class="space-x-3 md:space-x-2 flex justify-center text-center items-center text-white mb-3"
+      >
+        <a
+          href="https://www.facebook.com/share/1BCBAUAv86/?mibextid=wwXIfr"
+          aria-label="Facebook"
+          target="_blank"
+        >
           <FontAwesomeIcon
             :icon="['fab', 'facebook']"
             :style="{
@@ -96,23 +102,8 @@
             }"
           />
         </a>
-        <a href="#" aria-label="X (Twitter)" class="">
-          <FontAwesomeIcon
-            :icon="['fab', 'twitter']"
-            :style="{
-              width: '1.5rem',
-              height: '1.5rem',
-            }"
-          />
-        </a>
-        <a href="#" aria-label="Instagram" class="">
-          <FontAwesomeIcon
-            :icon="['fab', 'instagram']"
-            :style="{
-              width: '1.5rem',
-              height: '1.5rem',
-            }"
-          />
+        <a href="https://zalo.me/pc" aria-label="Zalo" target="_blank">
+          <img src="/image/brands/icons8-zalo-30.png" alt="Zalo" />
         </a>
       </div>
     </div>

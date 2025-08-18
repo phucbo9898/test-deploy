@@ -1,5 +1,6 @@
 <template>
-  <div class="max-w-7xl mx-auto p-1">
+  <div class="max-w-7xl mx-auto p-1 mb-3 mt-3">
+    <h3 class="text-lg md:text-xl uppercase">Sản phẩm nổi bật</h3>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <ProductCard
         v-for="product in products"

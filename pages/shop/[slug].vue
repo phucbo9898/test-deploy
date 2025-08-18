@@ -10,8 +10,14 @@
         >
       </div>
     </section>
-    <SidebarFilter @filter="fetchProducts" />
+    <section class="">
+      <CategorySlide
+        v-if="category.child && category.child.length > 0"
+        :categoryChild="category.child"
+      />
+    </section>
     <section class="px-2" v-if="products && products.length > 0">
+      <SidebarFilter @filter="fetchProducts" />
       <ProductGrid :products="products" />
       <!-- Pagination -->
       <Pagination
@@ -86,30 +92,7 @@ onMounted(async () => {
   };
   fetchProducts(params);
 });
-const category = ref({
-  name: "Mắt / Eyes",
-  slug: "mat-eyes",
-  products: [
-    {
-      id: 1,
-      title: "Sản phẩm 1",
-      image: "/image/products/Kem-danh-rang-Signal-0-6-tuoi-247x329.jpg",
-      price: "100.000₫",
-    },
-    {
-      id: 2,
-      title: "Sản phẩm 2",
-      image: "/image/products/Kem-danh-rang-Signal-0-6-tuoi-247x329.jpg",
-      price: "200.000₫",
-    },
-    {
-      id: 3,
-      title: "Sản phẩm 3",
-      image: "/image/products/Kem-danh-rang-Signal-0-6-tuoi-247x329.jpg",
-      price: "300.000₫",
-    },
-  ],
-});
+const category = ref({});
 </script>
 
 <style></style>
