@@ -55,7 +55,7 @@ const totalPages = ref(1);
 const limit = ref(10);
 
 async function fetchProducts(params: any) {
-  currentPage.value = params.page
+  currentPage.value = params.page;
   loading.value = true;
 
   try {
@@ -87,6 +87,10 @@ async function fetchProducts(params: any) {
     products.value = responseProducts.data.data.items;
     totalPages.value = responseProducts.data.data.pagination.totalPage;
     category.value = responseCategory.data.data;
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   } catch (err) {
     error.value = err;
   } finally {
