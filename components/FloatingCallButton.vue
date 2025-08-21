@@ -21,7 +21,7 @@
           >
           <div class=""></div>
           <p class="text-sm leading-relaxed">
-            Kênh xách tay đức là website bán lẻ online các sản phẩm chính hãng
+            Sang Apollo là website bán lẻ online các sản phẩm chính hãng
             nội địa Đức với giá tốt nhất.
           </p>
         </div>
@@ -43,7 +43,7 @@
         <div>
           <FacebookFanpageEmbed
             url="https://www.facebook.com/kenhxachtayduc"
-            pageTitle="Kênh Xách Tay Đức"
+            pageTitle="Sang Apollo"
           />
         </div>
         <!-- Latest Reviews -->
@@ -82,7 +82,7 @@
       <div
         class="container mx-auto py-10 px-50 flex flex-col md:flex-row justify-between items-center text-xs border-gray-600 pt-4"
       >
-        <p class="text-white text-sm">© Bản quyền thuộc về Kênh Xách Tay Đức</p>
+        <p class="text-white text-sm">© Bản quyền thuộc về Sang Apollo</p>
         <div class="flex space-x-2 mt-2 md:mt-0">
           <!-- <img src="/path/to/visa.png" alt="Visa" class="h-6" /> -->
           <!-- <img src="/path/to/paypal.png" alt="PayPal" class="h-6" /> -->

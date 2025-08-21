@@ -72,7 +72,7 @@
     >
       <div class="">
         <p class="text-white text-xs md:text-sm">
-          © Bản quyền thuộc về Kênh Xách Tay Đức
+          © Bản quyền thuộc về Sang Apollo
         </p>
       </div>
       <div
