@@ -12,19 +12,13 @@
         <div class="relative z-10 text-center">
           <span
             class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center uppercase"
-            >{{ category.name }}</span
+            >Kết quả tìm kiếm</span
           >
         </div>
       </section>
-      <section class="">
-        <CategorySlide
-          v-if="category.child && category.child.length > 0"
-          :categoryChild="category.child"
-        />
-      </section>
       <section class="px-2" v-if="products && products.length > 0">
         <SidebarFilter @filter="fetchProducts" />
-        <ProductGrid :products="products" />
+        <ProductGrid :products="products" title="Danh sách sản phẩm theo từ khóa" :keyword="keyword" />
         <!-- Pagination -->
         <Pagination
           :total-pages="totalPages"
@@ -42,10 +36,8 @@
 </template>
 
 <script lang="ts" setup>
-const route = useRoute();
-// console.log(route.query);
-// console.log(route.params);
-import { ref, onMounted, onBeforeUnmount } from "vue";
+
+import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 const { axios } = useAxios();
 const products = ref(null);
 const loading = ref(true);
@@ -53,36 +45,25 @@ const error = ref(null);
 const currentPage = ref(1);
 const totalPages = ref(1);
 const limit = ref(10);
+const keyword = ref('')
+const route = useRoute();
 
 async function fetchProducts(params: any) {
   currentPage.value = params.page;
   loading.value = true;
 
   try {
-    let paramSearchs: any = {};
-    paramSearchs.categorySlug = params.categorySlug || route.params.slug;
-    paramSearchs.page = params.page || currentPage.value;
-    paramSearchs.limit = params.limit || limit.value;
+    let paramSearch: any = {};
+    paramSearch.page = params.page || currentPage.value;
+    paramSearch.limit = params.limit || limit.value;
+    paramSearch.keyword = route.query.keyword;
     if (params.name) {
-      paramSearchs.keyword = params.name;
-    }
-    if (params.price_min) {
-      paramSearchs.minPrice = params.price_min;
-    }
-    if (params.price_max) {
-      paramSearchs.maxPrice = params.price_max;
-    }
-    if (params.sort) {
-      paramSearchs.sortBy = params.sort;
+      paramSearch.keyword = params.name;
     }
 
-    const [responseProducts, responseCategory] = await Promise.all([
-      axios.post("/api/product/search", paramSearchs),
-      axios.get(`/api/category/${route.params.slug}`),
-    ]);
+    const responseProducts = await axios.post("/api/product/search", paramSearch)
     products.value = responseProducts.data.data.items;
     totalPages.value = responseProducts.data.data.pagination.totalPage;
-    category.value = responseCategory.data.data;
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -96,13 +77,24 @@ async function fetchProducts(params: any) {
 
 onMounted(async () => {
   let params = {
-    categorySlug: route.params.slug,
     page: currentPage.value,
     limit: limit.value,
   };
   fetchProducts(params);
+  keyword.value = route.query.keyword
 });
-const category = ref({});
+
+watch(
+  () => route.fullPath,
+  (newPath: String, oldPath: String) => {
+    let params = {
+    page: currentPage.value,
+    limit: limit.value,
+    keyword: route.query.keyword
+  };
+    fetchProducts(params)
+  }
+)
 </script>
 
 <style></style>

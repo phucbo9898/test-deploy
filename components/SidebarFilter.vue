@@ -7,7 +7,6 @@
     >
       Lọc sản phẩm
     </button>
-    <!-- <DetailProduct :product="product" /> -->
     <div
       class="modal fade"
       id="modal-filter"

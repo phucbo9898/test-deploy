@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-[rgb(249,219,121)] sticky top-0 z-50 transition-shadow">
+  <header class="bg-[rgb(249,219,121)] top-0 z-50 transition-shadow">
     <div
       class="flex items-center justify-between lg:justify-between gap-4 py-2 relative"
     >
@@ -37,7 +37,9 @@
         </NuxtLink>
       </div>
 
-      <div class="w-1/3 flex justify-end items-center"></div>
+      <div class="w-1/3 flex justify-end items-center px-5">
+        <SearchProduct />
+      </div>
     </div>
     <transition name="fade-slide">
       <div

@@ -33,8 +33,6 @@ import { useLocalePath } from "#i18n";
 
 const localePath = useLocalePath();
 const route = useRoute();
-console.log(route.query);
-console.log(route.path);
 
 const loading = ref(true);
 const { axios } = useAxios();
