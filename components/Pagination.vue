@@ -6,7 +6,10 @@
       :disabled="currentPage === 1"
       @click="changePage(currentPage - 1)"
     >
-      Trang trước
+      <FontAwesomeIcon
+        :icon="['fas', 'chevron-left']"
+        class="w-3 h-3 text-black-400"
+      />
     </button>
 
     <!-- Số trang -->
@@ -37,7 +40,10 @@
       :disabled="currentPage === totalPages"
       @click="changePage(currentPage + 1)"
     >
-      Tiếp theo
+      <FontAwesomeIcon
+        :icon="['fas', 'chevron-right']"
+        class="w-3 h-3 text-black-400"
+      />
     </button>
   </div>
 </template>
