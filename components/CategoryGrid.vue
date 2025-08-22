@@ -77,17 +77,7 @@
               :alt="category.name"
               class="w-full h-40 object-contain mb-2"
             />
-            <div class="overlay">
-              <span
-                class="text-sm font-medium mb-1 text-center line-clamp-2 uppercase"
-              >
-                {{ category.name }}
-              </span>
-              <span class="text-center uppercase text-xs">
-                {{ category.totalProduct || 0 }} sản phẩm
-              </span>
-            </div>
-            <div class="block md:hidden">
+            <div class="">
               <span
                 class="text-sm font-medium mb-1 text-center line-clamp-2 uppercase"
               >
