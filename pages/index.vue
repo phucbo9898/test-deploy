@@ -1,7 +1,7 @@
 <template>
   <div>
     <ReusableBanner
-      v-for="(banner, index) in banners"
+      v-for="(banner, index) in sortedBanners"
       :key="index"
       v-bind="banner"
     />
@@ -54,57 +54,65 @@ const banners = [
     button_text_banner: "Khám phá sản phẩm cho bé →",
     bg_color: "bg-[rgb(249,219,121)]",
     // color_text: 'text-yellow-300',
-    url: "/shop/baby"
+    url: "/shop/baby",
+    order: 3
   },
   {
     flag: "banner-ltr",
     image: "/image/banner1.jpg",
     title_banner: "Chăm sóc bé yêu mỗi ngày",
     sub_title_banner: "An toàn – Dịu nhẹ – Yêu thương",
-    content: "Mang đến cho bé yêu những sản phẩm an toàn, dịu nhẹ và phù hợp với làn da nhạy cảm. Từ tã bỉm, sữa tắm, đến đồ chơi an toàn – tất cả đều được chọn lọc kỹ lưỡng để giúp bé phát triển khỏe mạnh và vui vẻ.",
+    content: "Mang đến cho bé yêu những sản phẩm từ Đức, an toàn, dịu nhẹ và phù hợp với làn da nhạy cảm.",
     button_text_banner: "Khám phá sản phẩm cho bé →",
-    url: "/shop/baby"
+    url: "/shop/baby",
+    order: 4
   },
   {
     flag: "slide",
     image: "/image/banner/banner2.png",
-    title_banner: "Nụ cười khỏe – Cuộc sống tươi",
-    content: "Răng miệng",
+    title_banner: "Nụ cười tươi – Răng chắc khỏe",
+    content: "",
     button_text_banner: "Xem sản phẩm răng miệng →",
     bg_color: "bg-[rgb(181,232,213)]",
     url: "/shop/rang-mieng",
+    order: 1
     // color_text: 'text-yellow-300',
   },
   {
     flag: "banner-rtr",
     image: "/image/banner2.jpg",
-    title_banner: "Nụ cười khỏe – Cuộc sống tươi",
-    sub_title_banner: "Chăm sóc răng miệng toàn diện",
+    title_banner: "Nụ cười tươi – Răng chắc khỏe",
+    sub_title_banner: "",
     content:
-      "Giữ gìn sức khỏe răng miệng cho cả gia đình với các sản phẩm chất lượng: bàn chải, kem đánh răng, nước súc miệng… Giúp hơi thở thơm mát, răng trắng sáng và nụ cười luôn rạng rỡ.",
+      "Chăm sóc sức khỏe răng miệng cho cả nhà với các sản phẩm nội địa Đức",
     button_text_banner: "Xem sản phẩm răng miệng →",
-    url: "/shop/rang-mieng"
+    url: "/shop/rang-mieng",
+    order: 2
   },
   {
     flag: "slide",
     image: "/image/banner/banner3.png",
-    title_banner: "Tóc đẹp, tự tin tỏa sáng",
-    content: "Tóc",
+    title_banner: "Tóc đẹp chuẩn Salon",
+    content: "",
     button_text_banner: "Khám phá sản phẩm cho tóc →",
     bg_color: "bg-[rgb(255,191,179)]",
-    url: "/shop/toc"
+    url: "/shop/toc",
+    order: 5
   },
   {
     flag: "banner-ltr",
     image: "/image/banner/banner4.png",
-    title_banner: "Tóc đẹp, tự tin tỏa sáng",
-    sub_title_banner: "Nuôi dưỡng từ gốc đến ngọn",
+    title_banner: "Tóc đẹp chuẩn Salon",
+    sub_title_banner: "",
     content:
-      "Bộ sưu tập chăm sóc tóc giúp bạn sở hữu mái tóc khỏe mạnh, óng mượt. Dầu gội, dầu xả, tinh dầu dưỡng – tất cả được chọn lọc để nuôi dưỡng và bảo vệ mái tóc mỗi ngày.",
+      "Nuôi dưỡng và bảo vệ mái tóc từ gốc đến ngọn cùng các sản phẩm đến từ các thương hiệu nổi tiếng",
     button_text_banner: "Khám phá sản phẩm cho tóc →",
-    url: "/shop/toc"
+    url: "/shop/toc",
+    order: 6
   },
 ];
+
+const sortedBanners = banners.sort((a, b) => a.order - b.order);
 
 const stripeSection = ref(null);
 const bgX = ref(0);

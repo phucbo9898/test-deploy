@@ -68,7 +68,7 @@
               Thương hiệu: {{ productDetail.brandName || "Không có" }}
             </span>
           </div>
-          <div class="mt-2">
+          <div class="mt-2 hidden">
             <span class="text-sm md:text-lg text-gray-500">
               Xuất xứ: {{ productDetail.made_in || "Không có" }}
             </span>
@@ -79,10 +79,10 @@
             </span>
           </div>
           <hr
-            class="mt-2 border-t-2 border-gray-400 border-dashed !border-0 !border-t-2 !border-gray-400 !border-dashed"
+            class="hidden mt-2 border-t-2 border-gray-400 border-dashed !border-0 !border-t-2 !border-gray-400 !border-dashed"
             style="border: none; border-top: 2px dashed #9ca3af"
           />
-          <div class="mt-2">
+          <div class="mt-2 hidden">
             <span class="text-sm md:text-lg text-gray-500">
               SKU: {{ productDetail.sku || "Không có" }}
             </span>

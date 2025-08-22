@@ -161,4 +161,9 @@ const isMobileMenuOpen = ref(false);
     transform: translateY(0);
   }
 }
+
+.logo-link img {
+  max-height: 80px;
+  transform: scale(2.5);
+}
 </style>

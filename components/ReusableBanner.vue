@@ -50,7 +50,7 @@
         class="w-full md:w-1/2 flex flex-col items-center justify-center p-8 text-center"
       >
         <h2 class="text-2xl md:text-4xl font-bold">{{ title_banner }}</h2>
-        <h3 class="text-xl md:text-3xl mb-4 font-belinda">
+        <h3 class="text-xl md:text-3xl mb-4">
           {{ sub_title_banner }}
         </h3>
         <p class="text-md md:text-lg mb-6">
@@ -83,7 +83,7 @@
         class="w-full md:w-1/2 flex flex-col items-center justify-center p-8 text-center"
       >
         <h2 class="text-2xl md:text-4xl font-bold">{{ title_banner }}</h2>
-        <h3 class="text-xl md:text-3xl mb-4 font-belinda">
+        <h3 class="text-xl md:text-3xl mb-4">
           {{ sub_title_banner }}
         </h3>
         <p class="text-md md:text-lg mb-6">
