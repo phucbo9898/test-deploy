@@ -1,3 +1,6 @@
+# Information
+1. Nuxt JS version 3
+2. Node version 20.19.0
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
