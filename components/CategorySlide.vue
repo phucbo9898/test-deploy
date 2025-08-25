@@ -21,12 +21,14 @@
               :alt="category.name"
               class="w-full h-40 object-contain mb-2"
             />
-            <div class="overlay">
-              <span
-                class="text-sm font-medium mb-1 text-center line-clamp-2 uppercase"
-              >
-                {{ category.name }}
-              </span>
+            <div class="hidden md:block">
+              <div class="overlay">
+                <span
+                  class="text-sm font-medium mb-1 text-center line-clamp-2 uppercase"
+                >
+                  {{ category.name }}
+                </span>
+              </div>
             </div>
             <div class="block md:hidden">
               <span
@@ -65,14 +67,16 @@ const breakpoints = {
 };
 
 const maxSlides = computed(() => {
-  const values = Object.values(breakpoints).map(bp => bp.slidesPerView || 0)
-  
-   return values.length ? Math.max(...values) : 1
-})
+  const values = Object.values(breakpoints).map((bp) => bp.slidesPerView || 0);
+
+  return values.length ? Math.max(...values) : 1;
+});
 
 const wrapperClass = computed(() => {
-  return props.categoryChild && props.categoryChild.length < maxSlides.value ? "custom-center" : ""
-})
+  return props.categoryChild && props.categoryChild.length < maxSlides.value
+    ? "custom-center"
+    : "";
+});
 </script>
 
 <style>
