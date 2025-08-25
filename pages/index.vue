@@ -48,67 +48,79 @@ onMounted(async () => {
 const banners = [
   {
     flag: "slide",
-    image: "/image/banner/banner1.png",
+    image: "/image/banner/thuc-pham-chuc-nang.png",
+    title_banner: "Thực phẩm chức năng",
+    content: "",
+    button_text_banner: "Xem sản phẩm thực phẩm chức năng →",
+    bg_color: "bg-[rgb(249,219,121)]",
+    // color_text: 'text-yellow-300',
+    url: "/shop/thuc-pham-chuc-nang",
+    order: 0,
+  },
+  {
+    flag: "slide",
+    image: "/image/banner/category-baby.png",
     title_banner: "Chăm sóc bé yêu mỗi ngày",
     content: "Baby",
     button_text_banner: "Khám phá sản phẩm cho bé →",
     bg_color: "bg-[rgb(249,219,121)]",
     // color_text: 'text-yellow-300',
     url: "/shop/baby",
-    order: 3
+    order: 3,
   },
   {
     flag: "banner-ltr",
-    image: "/image/banner1.jpg",
+    image: "/image/banner/category-baby.jpg",
     title_banner: "Chăm sóc bé yêu mỗi ngày",
     sub_title_banner: "An toàn – Dịu nhẹ – Yêu thương",
-    content: "Mang đến cho bé yêu những sản phẩm từ Đức, an toàn, dịu nhẹ và phù hợp với làn da nhạy cảm.",
+    content:
+      "Mang đến cho bé yêu những sản phẩm từ Đức, an toàn, dịu nhẹ và phù hợp với làn da nhạy cảm.",
     button_text_banner: "Khám phá sản phẩm cho bé →",
     url: "/shop/baby",
-    order: 4
+    order: 4,
   },
   {
     flag: "slide",
-    image: "/image/banner/banner2.png",
+    image: "/image/banner/category-rang.png",
     title_banner: "Nụ cười tươi – Răng chắc khỏe",
     content: "",
     button_text_banner: "Xem sản phẩm răng miệng →",
     bg_color: "bg-[rgb(181,232,213)]",
     url: "/shop/rang-mieng",
-    order: 1
+    order: 1,
     // color_text: 'text-yellow-300',
   },
   {
     flag: "banner-rtr",
-    image: "/image/banner2.jpg",
+    image: "/image/banner/category-rang.png",
     title_banner: "Nụ cười tươi – Răng chắc khỏe",
     sub_title_banner: "",
     content:
       "Chăm sóc sức khỏe răng miệng cho cả nhà với các sản phẩm nội địa Đức",
     button_text_banner: "Xem sản phẩm răng miệng →",
     url: "/shop/rang-mieng",
-    order: 2
+    order: 2,
   },
   {
     flag: "slide",
-    image: "/image/banner/banner3.png",
+    image: "/image/banner/category-toc.png",
     title_banner: "Tóc đẹp chuẩn Salon",
     content: "",
     button_text_banner: "Khám phá sản phẩm cho tóc →",
     bg_color: "bg-[rgb(255,191,179)]",
     url: "/shop/toc",
-    order: 5
+    order: 5,
   },
   {
     flag: "banner-ltr",
-    image: "/image/banner/banner4.png",
+    image: "/image/banner/category-toc.png",
     title_banner: "Tóc đẹp chuẩn Salon",
     sub_title_banner: "",
     content:
       "Nuôi dưỡng và bảo vệ mái tóc từ gốc đến ngọn cùng các sản phẩm đến từ các thương hiệu nổi tiếng",
     button_text_banner: "Khám phá sản phẩm cho tóc →",
     url: "/shop/toc",
-    order: 6
+    order: 6,
   },
 ];
 
