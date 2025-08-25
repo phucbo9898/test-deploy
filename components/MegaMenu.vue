@@ -14,7 +14,14 @@
           <nav class="mx-auto px-4">
             <ul class="flex space-x-4">
               <li v-for="(item, idx) in menuData" :key="idx" class="group py-4">
-                <NuxtLink :to="localePath('/') + item.url">
+                <div v-if="!item.url">
+                  <span
+                    class="font-medium cursor-pointer hover:text-[#79869c] uppercase"
+                  >
+                    {{ item.name }}
+                  </span>
+                </div>
+                <NuxtLink v-else :to="localePath('/') + item.url">
                   <span
                     class="font-medium cursor-pointer hover:text-[#79869c] uppercase"
                   >
@@ -83,11 +90,11 @@ const menuData = [
   },
   {
     name: $t("About us"),
-    url: "about",
+    url: "",
   },
   {
     name: $t("Contact"),
-    url: "home",
+    url: "",
   },
 ];
 
