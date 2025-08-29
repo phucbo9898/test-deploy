@@ -111,8 +111,6 @@ const props = defineProps({
 // );
 
 function formatPrice(value: number) {
-  console.log("locale", locale.value);
-
   const number =
     typeof value === "string" ? parseFloat(value.replace(/\./g, "")) : value;
   return number.toLocaleString("vi-VN") + "₫";

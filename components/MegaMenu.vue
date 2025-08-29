@@ -21,7 +21,7 @@
                     {{ item.name }}
                   </span>
                 </div>
-                <NuxtLink v-else :to="localePath('/') + item.url">
+                <NuxtLink v-else :to="localePath('/' + item.url)">
                   <span
                     class="font-medium cursor-pointer hover:text-[#79869c] uppercase"
                   >
@@ -58,7 +58,7 @@
         </div>
         <ul class="max-h-[80vh] overflow-hidden mx-auto">
           <li v-for="(item, idx) in menuData" :key="idx" class="items-center">
-            <NuxtLink :to="localePath('/') + item.url">
+            <NuxtLink :to="localePath('/' + item.url)">
               <div
                 class="flex justify-center items-center py-3 px-4 font-medium hover:bg-gray-100 cursor-pointer"
                 @click="isMobileMenuOpen = false"
