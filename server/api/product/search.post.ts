@@ -7,8 +7,10 @@ export default defineEventHandler(async (event) => {
   try {
     const response = await axios.post("/Product", body);
     return response.data;
-  } catch (error) {
-    console.error("API /Product error:", error);
-    return { error: "Không thể lấy sản phẩm" };
+  } catch (error: any) {
+    throw createError({
+      status: error.response.status,
+      statusText: error.response.statusText,
+    });
   }
 });

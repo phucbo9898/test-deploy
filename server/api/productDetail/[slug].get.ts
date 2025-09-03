@@ -8,7 +8,10 @@ export default defineEventHandler(async (event) => {
     const response = await axios.get(`/Product/${slug}`);
     return response.data;
   } catch (error) {
-    console.error("API error:", error);
-    return { error: "Không thể lấy dữ liệu" };
+    throw createError({
+      statusCode: error.response?.status,
+      statusMessage: error.response?.statusText,
+      fatal: true,
+    });
   }
 });

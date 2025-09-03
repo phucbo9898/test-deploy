@@ -190,11 +190,12 @@ async function getSuggestion() {
     );
 
     suggestions.value = response.data.data;
-  } catch (err) {
-    error.value = err;
-    console.log("Error fetching product detail:", err);
-  } finally {
     isLoading.value = false;
+  } catch (err) {
+    showError({
+      statusCode: 404,
+      statusMessage: err.response?.statusText,
+    });
   }
 }
 

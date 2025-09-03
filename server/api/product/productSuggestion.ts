@@ -8,8 +8,10 @@ export default defineEventHandler(async (event) => {
   try {
     const response = await axios.get("/Product/search?keyword=" + keyword);
     return response.data;
-  } catch (error) {
-    console.error("API Search error:", error);
-    return { error: "Không thể lấy sản phẩm" };
+  } catch (error: any) {
+    throw createError({
+      status: error.response.status,
+      statusText: error.response.statusText,
+    });
   }
 });

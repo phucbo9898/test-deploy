@@ -194,11 +194,12 @@ onMounted(async () => {
     });
 
     safeContent.value = DOMPurify.sanitize(doc.body.innerHTML);
-  } catch (err) {
-    error.value = err;
-    console.log("Error fetching product detail:", err);
-  } finally {
     loading.value = false;
+  } catch (err: any) {
+    showError({
+      statusCode: 404,
+      statusMessage: err.response?.statusText,
+    });
   }
 });
 

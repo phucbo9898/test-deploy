@@ -43,11 +43,12 @@ onMounted(async () => {
   try {
     const response = await axios.get("/api/categoryProducts");
     categories.value = response.data.data;
-  } catch (err) {
-    error.value = err;
-    console.log("Error fetching categories:", err);
-  } finally {
     loading.value = false;
+  } catch (err) {
+    showError({
+      statusCode: 404,
+      statusMessage: err.response?.statusText,
+    });
   }
 });
 

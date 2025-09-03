@@ -68,10 +68,12 @@ async function fetchProducts(params: any) {
       top: 0,
       behavior: "smooth",
     });
-  } catch (err) {
-    error.value = err;
-  } finally {
     loading.value = false;
+  } catch (err: any) {
+    showError({
+      statusCode: 404,
+      statusMessage: err.response?.statusText,
+    });
   }
 }
 
