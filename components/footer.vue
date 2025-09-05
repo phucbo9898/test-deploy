@@ -91,8 +91,14 @@
             }"
           />
         </a>
-        <a href="https://zalo.me/pc" aria-label="Zalo" target="_blank">
-          <img src="/image/brands/icons8-zalo-30.png" alt="Zalo" />
+        <a href="https://zalo.me/0374575389" aria-label="Zalo" target="_blank">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+            alt="Zalo"
+            width="24"
+            height="24"
+            style="vertical-align: middle"
+          />
         </a>
       </div>
     </div>

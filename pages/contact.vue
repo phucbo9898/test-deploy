@@ -39,7 +39,7 @@
             </a>
 
             <a
-              href="https://zalo.me/pc"
+              href="https://zalo.me/0374575389"
               target="_blank"
               style="margin: 0 10px; text-decoration: none"
             >
