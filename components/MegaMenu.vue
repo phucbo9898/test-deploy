@@ -88,13 +88,13 @@ const menuData = [
     name: $t("Menu"),
     url: "shop",
   },
-  {
-    name: $t("About us"),
-    url: "",
-  },
+  // {
+  //   name: $t("About us"),
+  //   url: "",
+  // },
   {
     name: $t("Contact"),
-    url: "",
+    url: "contact",
   },
 ];
 
