@@ -47,6 +47,31 @@ const totalPages = ref(1);
 const limit = ref(10);
 const keyword = ref('')
 const route = useRoute();
+const runtimeConfig = useRuntimeConfig();
+const currentUrl = computed(() => {
+  return `${runtimeConfig.public.siteName}${route.fullPath}`;
+});
+
+useHead({
+  title: "Sang Apollo - Cam Kết Chất Lượng Sản phẩm",
+  meta: [
+    {
+      property: "og:title",
+      content: "You searched for " + route.query.keyword + " Sang Apollo - Cam Kết Chất Lượng Sản phẩm",
+    },
+    { property: "og:type", content: "article" },
+    {
+      name: "description",
+      content:
+        "Sang Apollo là website bán lẻ online các sản phẩm chính hãng nội địa Đức với Giá Tốt Nhất - Cam Kết Chất Lượng Sản Phẩm - Ship COD Toàn Quốc.",
+    },
+    { property: "og:url", content: currentUrl.value },
+    {
+      property: "og:site_name",
+      content: "Sang Apollo - Uy tín - Cam kết chất lượng sản phẩm",
+    },
+  ],
+});
 
 async function fetchProducts(params: any) {
   currentPage.value = params.page;

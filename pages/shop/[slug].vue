@@ -42,10 +42,9 @@
 </template>
 
 <script lang="ts" setup>
-const route = useRoute();
-// console.log(route.query);
-// console.log(route.params);
 import { ref, onMounted, onBeforeUnmount } from "vue";
+
+const route = useRoute();
 const { axios } = useAxios();
 const products = ref(null);
 const loading = ref(true);
@@ -53,6 +52,32 @@ const error = ref(null);
 const currentPage = ref(1);
 const totalPages = ref(1);
 const limit = ref(10);
+const category = ref({});
+const runtimeConfig = useRuntimeConfig();
+const currentUrl = computed(() => {
+  return `${runtimeConfig.public.siteName}${route.fullPath}`;
+});
+
+useHead({
+  title: "Sang Apollo - Chính Hãng - Cam Kết Chất Lượng Sản Phẩm",
+  meta: [
+    {
+      property: "og:title",
+      content: "Sang Apollo - Chính Hãng - Cam Kết Chất Lượng Sản Phẩm",
+    },
+    { property: "og:type", content: "article" },
+    {
+      name: "description",
+      content:
+        "Sang Apollo là website bán lẻ online các sản phẩm xách tay Đức với giá tốt nhất. Cam kết 100% hàng chính hãng mua trực tiếp tại Đức mang về.",
+    },
+    { property: "og:url", content: currentUrl.value },
+    {
+      property: "og:site_name",
+      content: "Sang Apollo - Uy tín - Cam kết chất lượng sản phẩm",
+    },
+  ],
+});
 
 async function fetchProducts(params: any) {
   currentPage.value = params.page;
@@ -104,7 +129,6 @@ onMounted(async () => {
   };
   fetchProducts(params);
 });
-const category = ref({});
 </script>
 
 <style></style>

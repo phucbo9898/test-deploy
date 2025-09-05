@@ -16,6 +16,33 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const route = useRoute();
+const runtimeConfig = useRuntimeConfig();
+const currentUrl = computed(() => {
+  return `${runtimeConfig.public.siteName}${route.fullPath}`;
+});
+
+useHead({
+  title: "Sang Apollo - Chính Hãng - Cam Kết Chất Lượng Sản Phẩm",
+  meta: [
+    {
+      property: "og:title",
+      content: "Sang Apollo - Chính Hãng - Cam Kết Chất Lượng Sản Phẩm",
+    },
+    { property: "og:type", content: "article" },
+    {
+      name: "description",
+      content:
+        "Sang Apollo là website bán lẻ online các sản phẩm xách tay Đức với giá tốt nhất. Cam kết 100% hàng chính hãng mua trực tiếp tại Đức mang về.",
+    },
+    { property: "og:url", content: currentUrl.value },
+    {
+      property: "og:site_name",
+      content: "Sang Apollo - Uy tín - Cam kết chất lượng sản phẩm",
+    },
+  ],
+});
+</script>
 
 <style></style>

@@ -41,4 +41,13 @@ export default defineNuxtConfig({
       siteName: process.env.NUXT_URL,
     },
   },
+  app: {
+    head: {
+      meta: [
+        { name: "author", content: "Sang Apollo" },
+        { name: "robots", content: "index, follow" },
+      ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
+  },
 });
