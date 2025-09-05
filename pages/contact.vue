@@ -29,7 +29,7 @@
               style="margin: 0 10px; text-decoration: none"
             >
               <img
-                src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                src="/image/brands/facebook-icon.png"
                 alt="Facebook"
                 width="40"
                 height="40"
@@ -44,7 +44,7 @@
               style="margin: 0 10px; text-decoration: none"
             >
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+                src="/image/brands/Icon_of_Zalo.svg"
                 alt="Zalo"
                 width="40"
                 height="40"

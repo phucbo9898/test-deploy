@@ -83,17 +83,17 @@
           aria-label="Facebook"
           target="_blank"
         >
-          <FontAwesomeIcon
-            :icon="['fab', 'facebook']"
-            :style="{
-              width: '1.5rem',
-              height: '1.5rem',
-            }"
+          <img
+            src="/image/brands/facebook-icon.png"
+            alt="Facebook"
+            width="24"
+            height="24"
+            style="vertical-align: middle"
           />
         </a>
         <a href="https://zalo.me/0374575389" aria-label="Zalo" target="_blank">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+            src="/image/brands/Icon_of_Zalo.svg"
             alt="Zalo"
             width="24"
             height="24"
