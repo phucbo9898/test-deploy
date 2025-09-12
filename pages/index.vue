@@ -75,7 +75,7 @@ onMounted(async () => {
 const banners = [
   {
     flag: "slide",
-    image: "/image/banner/thuc-pham-chuc-nang.png",
+    image: "/image/banners/Thuc_pham_chuc_nang.png",
     title_banner: "Thực phẩm chức năng",
     content: "",
     button_text_banner: "Xem sản phẩm thực phẩm chức năng →",
@@ -86,7 +86,7 @@ const banners = [
   },
   {
     flag: "slide",
-    image: "/image/banner/category-baby.png",
+    image: "/image/banners/Baby.png",
     title_banner: "Chăm sóc bé yêu mỗi ngày",
     content: "Baby",
     button_text_banner: "Khám phá sản phẩm cho bé →",
@@ -97,7 +97,7 @@ const banners = [
   },
   {
     flag: "banner-ltr",
-    image: "/image/banner/category-baby.jpg",
+    image: "/image/banners/Baby.WEBP",
     title_banner: "Chăm sóc bé yêu mỗi ngày",
     sub_title_banner: "An toàn – Dịu nhẹ – Yêu thương",
     content:
@@ -108,7 +108,7 @@ const banners = [
   },
   {
     flag: "slide",
-    image: "/image/banner/category-rang.png",
+    image: "/image/banners/Cham_soc_rang_mieng.png",
     title_banner: "Nụ cười tươi – Răng chắc khỏe",
     content: "",
     button_text_banner: "Xem sản phẩm răng miệng →",
@@ -119,7 +119,7 @@ const banners = [
   },
   {
     flag: "banner-rtr",
-    image: "/image/banner/category-rang.png",
+    image: "/image/banners/Cham_soc_rang_mieng.png",
     title_banner: "Nụ cười tươi – Răng chắc khỏe",
     sub_title_banner: "",
     content:
@@ -130,7 +130,7 @@ const banners = [
   },
   {
     flag: "slide",
-    image: "/image/banner/category-toc.png",
+    image: "/image/banners/Toc.png",
     title_banner: "Tóc đẹp chuẩn Salon",
     content: "",
     button_text_banner: "Khám phá sản phẩm cho tóc →",
@@ -140,7 +140,7 @@ const banners = [
   },
   {
     flag: "banner-ltr",
-    image: "/image/banner/category-toc.png",
+    image: "/image/banners/Toc.WEBP",
     title_banner: "Tóc đẹp chuẩn Salon",
     sub_title_banner: "",
     content:

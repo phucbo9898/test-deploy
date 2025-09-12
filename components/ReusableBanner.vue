@@ -27,7 +27,7 @@
         <div class="text-center">
           <NuxtLink
             :to="localePath(url)"
-            class="border-[2px] bg-white border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+            class="border-[2px] bg-white border-gray-600 text-gray-600 px-5 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition text-sm md:text-md"
           >
             {{ button_text_banner }}
           </NuxtLink>
@@ -63,7 +63,7 @@
         </button> -->
         <NuxtLink
           :to="localePath(url)"
-          class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+          class="text-sm md:text-md border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition"
         >
           {{ button_text_banner }}
         </NuxtLink>
@@ -96,7 +96,7 @@
         </button> -->
         <NuxtLink
           :to="localePath(url)"
-          class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
+          class="text-sm md:text-md border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition"
         >
           {{ button_text_banner }}
         </NuxtLink>
