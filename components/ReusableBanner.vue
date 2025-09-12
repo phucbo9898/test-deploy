@@ -6,11 +6,7 @@
       :class="bg_color"
     >
       <div class="absolute">
-        <img
-          :src="image"
-          alt="Banner"
-          class="object-cover opacity-55"
-        />
+        <img :src="image" alt="Banner" class="object-cover opacity-55" />
       </div>
       <div class="relative z-10 text-center">
         <span
@@ -40,10 +36,13 @@
       </div>
     </section>
     <section
-      v-else-if="flag === 'banner-ltr'"
+      v-else-if="flag === 'banner-ltr' || flag === 'banner-rtr'"
       class="block md:flex md:flex-col md:flex-row w-full h-full md:h-[600px] overflow-hidden"
     >
-      <div class="w-full md:w-1/2 h-64 md:h-full overflow-hidden">
+      <div
+        class="w-full md:w-1/2 h-64 md:h-full overflow-hidden"
+        :class="flag === 'banner-rtr' ? 'md:order-last' : ''"
+      >
         <img :src="image" alt="Banner" class="w-full h-full object-cover" />
       </div>
       <div
@@ -56,11 +55,6 @@
         <p class="text-md md:text-lg mb-6">
           {{ content }}
         </p>
-        <!-- <button
-          class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
-        >
-          {{ button_text_banner }}
-        </button> -->
         <NuxtLink
           :to="localePath(url)"
           class="text-sm md:text-md border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition"
@@ -69,7 +63,7 @@
         </NuxtLink>
       </div>
     </section>
-    <section
+    <!-- <section
       v-else-if="flag === 'banner-rtr'"
       class="block md:flex md:flex-col md:flex-row w-full h-full md:h-[600px] overflow-hidden"
     >
@@ -89,11 +83,6 @@
         <p class="text-md md:text-lg mb-6">
           {{ content }}
         </p>
-        <!-- <button
-          class="border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition uppercase"
-        >
-          {{ button_text_banner }}
-        </button> -->
         <NuxtLink
           :to="localePath(url)"
           class="text-sm md:text-md border-2 border-gray-600 text-gray-600 px-6 py-2 rounded hover:bg-gray-600 hover:text-white cursor-pointer transition"
@@ -101,7 +90,7 @@
           {{ button_text_banner }}
         </NuxtLink>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
