@@ -75,7 +75,7 @@ onMounted(async () => {
 const banners = [
   {
     flag: "slide",
-    image: "/image/banners/Thuc_pham_chuc_nang.png",
+    image: "/image/banners/thuc-pham.png",
     title_banner: "Thực phẩm chức năng",
     content: "",
     button_text_banner: "Xem sản phẩm thực phẩm chức năng →",
