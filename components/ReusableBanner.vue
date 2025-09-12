@@ -9,7 +9,7 @@
         <img
           :src="image"
           alt="Banner"
-          class="h-[200px] md:h-[500px] object-contain opacity-55"
+          class="object-cover opacity-55"
         />
       </div>
       <div class="relative z-10 text-center">
